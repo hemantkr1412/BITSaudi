@@ -2,7 +2,7 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import UserDetails from "./UserDetails";
+import UserDetails from "./userDetails";
 
 function TabPanel(props) {
   const { value, users, update } = props;

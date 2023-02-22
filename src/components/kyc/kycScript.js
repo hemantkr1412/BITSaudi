@@ -11,9 +11,10 @@ const KycScript = (setForm) => {
   const [description, setdescription] = useState(user.userData.description);
   const [website, setwebsite] = useState(user.userData.website);
   const [email, setemail] = useState(user.userData.email);
-  const [contact, setcontact] = useState(user.userData.contact);
+  const [contact, setcontact] = useState(parseInt(user.userData.contact));
   const [regId, setregId] = useState(user.userData.regId);
   const [idProof, setidProof] = useState("");
+  const [approvers, setApprovers] = useState(user.userData.approvers);
 
   const handleSubmit = () => {
     setStatus("");
@@ -50,6 +51,7 @@ const KycScript = (setForm) => {
       contact: contact,
       regId: regId,
       idProof: idProof,
+      approvers: JSON.stringify(approvers),
     })
       .then(async (res) => {
         setisuploading(false);
@@ -81,6 +83,8 @@ const KycScript = (setForm) => {
     idProof,
     setidProof,
     handleSubmit,
+    approvers,
+    setApprovers,
   };
 };
 

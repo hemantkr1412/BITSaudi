@@ -1,6 +1,11 @@
 import KycScript from "./kycScript";
+import Dialog from "@mui/material/Dialog";
+import { useState } from "react";
+import { Button } from "@mui/material";
 
 export const KYCform = (props) => {
+  const [approverDialog, setApproverDialog] = useState(false);
+
   const {
     status,
     isuploading,
@@ -19,6 +24,8 @@ export const KYCform = (props) => {
     idProof,
     setidProof,
     handleSubmit,
+    approvers,
+    setApprovers,
   } = KycScript(props.setForm);
 
   return (
@@ -32,7 +39,7 @@ export const KYCform = (props) => {
           value={name}
           name="name"
           onChange={(e) => setName(e.target.value)}
-          placeholder="Name of the Company"
+          placeholder="Name of the Organization"
         />
         <label htmlFor="name">Description</label>
         <input
@@ -41,7 +48,7 @@ export const KYCform = (props) => {
           value={description}
           name="description"
           onChange={(e) => setdescription(e.target.value)}
-          placeholder="Name of the Company"
+          placeholder="Description of the Organization"
         />
         <label htmlFor="email">Official Website*</label>
         <input
@@ -63,7 +70,7 @@ export const KYCform = (props) => {
         />
         <label htmlFor="website">Phone number*</label>
         <input
-          type="text"
+          type="number"
           id="website"
           name="phone"
           value={contact}
@@ -91,13 +98,166 @@ export const KYCform = (props) => {
           }}
         />
 
+        <div
+          style={{
+            marginTop: "20px",
+            border: "1px solid white",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          Add approving authorities. (optional)
+          <h5>
+            Approving authorities have to approve any document issuance via
+            email.
+          </h5>
+          {approvers?.map((person, index) => (
+            <div
+              key={"approver-" + person.email}
+              style={{
+                width: "100%",
+                display: "grid",
+                gridTemplateColumns: "1fr 3fr 1fr",
+                alignItems: "center",
+                borderBottom: "1px solid black",
+                margin: "10px 0px",
+                padding: "10px 0px",
+              }}
+            >
+              {index + 1}.
+              <div style={{ textAlign: "left" }}>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "grid",
+                    gridTemplateColumns: "1fr 2fr",
+                  }}
+                >
+                  Name:
+                  <span>{person.designation}</span>
+                </div>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "grid",
+                    gridTemplateColumns: "1fr 2fr",
+                  }}
+                >
+                  Designation:
+                  <span>{person.designation}</span>
+                </div>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "grid",
+                    gridTemplateColumns: "1fr 2fr",
+                  }}
+                >
+                  Email:
+                  <span>{person.email}</span>
+                </div>
+              </div>
+              <button
+                onClick={() =>
+                  setApprovers((prev) => {
+                    let newArray = [];
+                    prev.map((app, i) => {
+                      if (i !== index) {
+                        newArray.push(app);
+                      }
+                    });
+                    return newArray;
+                  })
+                }
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+          <button onClick={() => setApproverDialog(true)}>Add approvers</button>
+        </div>
+
         <div className="status">{status}</div>
         {isuploading ? (
           <button>Uploading...</button>
         ) : (
-          <button onClick={handleSubmit}>Submit</button>
+          <button
+            onClick={handleSubmit}
+            style={{
+              background: "var(--secondary)",
+              color: "var(--primary)",
+            }}
+          >
+            Submit KYC
+          </button>
         )}
       </div>
+      <Dialog onClose={() => setApproverDialog(false)} open={approverDialog}>
+        <div
+          style={{
+            padding: "40px",
+            background: "var(--primary)",
+            color: "var(--secondary)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "20px",
+          }}
+        >
+          <h2>Add Approver</h2>
+          <div
+            style={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "1fr 2fr",
+            }}
+          >
+            <label htmlFor="add-approver-name">Name: </label>
+            <input type="text" id="add-approver-name" />
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "1fr 2fr",
+            }}
+          >
+            <label htmlFor="add-approver-designation">Designation: </label>
+            <input type="text" id="add-approver-designation" />
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "1fr 2fr",
+            }}
+          >
+            <label htmlFor="add-approver-email">Email: </label>
+            <input type="text" id="add-approver-email" />
+          </div>
+          <button
+            onClick={() => {
+              setApprovers((prev) => [
+                ...prev,
+                {
+                  name: document.getElementById("add-approver-name").value,
+                  designation: document.getElementById(
+                    "add-approver-designation"
+                  ).value,
+                  email: document.getElementById("add-approver-email").value,
+                },
+              ]);
+              setApproverDialog(false);
+            }}
+          >
+            Add
+          </button>
+        </div>
+      </Dialog>
     </div>
   );
 };

@@ -19,7 +19,7 @@ import CertIssue from "../certIssue/certIssue";
 const InstitutesLandingPage = () => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(false);
-  const [view, setView] = useState(0);
+  const [view, setView] = useState(1);
   const [certData, setCertData] = useState(null);
 
   const [sector, setSector] = useState({

@@ -18,6 +18,7 @@ import Verify from "./components/verify/verify";
 import VerifyWithDetails from "./components/verify/verifyWithDetails";
 import Dashboard from "./components/dashboard/dashboard";
 import InstitutesLandingPage from "./components/institution/instititeAdvanced/landingPage/landing";
+import Approval from "./components/institution/instititeAdvanced/approval/approval";
 
 // context
 import UserState from "./context/userContext/userState";
@@ -58,6 +59,7 @@ function App() {
               path="/verify/:contractAddress/:tokenId"
               element={<VerifyWithDetails />}
             />
+            <Route path="/approval/:orderId/:otp" element={<Approval />} />
           </Routes>
           <Footer />
         </UserState>
