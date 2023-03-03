@@ -19,7 +19,7 @@ import CertIssue from "../certIssue/certIssue";
 const InstitutesLandingPage = () => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(false);
-  const [view, setView] = useState(1);
+  const [view, setView] = useState("education");
   const [certData, setCertData] = useState(null);
 
   const [sector, setSector] = useState({
@@ -123,13 +123,13 @@ const InstitutesLandingPage = () => {
   const Navbar = () => {
     return (
       <div className="institutenavbar" style={{ left: "0px", height: "50px" }}>
-        <MenuIcon
+        {/* <MenuIcon
           fontSize="large"
           sx={{ margin: "0px 30px", "&:hover": { color: "var(--primary)" } }}
           onClick={() => setIsSidebar(!isSidebar)}
-        />
+        /> */}
         {sector["logo"]}
-        {sector["text"]}
+        Institution
       </div>
     );
   };
@@ -158,15 +158,14 @@ const InstitutesLandingPage = () => {
                 width: "100%",
               }}
             >
-              {view === 0 ? (
-                <Subscription setView={setView} />
-              ) : view == 1 ? (
+              {view === "education" && (
                 <Education
                   setView={setView}
                   setCertData={setCertData}
                   certData={certData}
                 />
-              ) : (
+              )}
+              {view === "certIssue" && (
                 <CertIssue setView={setView} certData={certData} />
               )}
             </div>

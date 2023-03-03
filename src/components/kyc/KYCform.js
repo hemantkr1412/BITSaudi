@@ -26,6 +26,18 @@ export const KYCform = (props) => {
     handleSubmit,
     approvers,
     setApprovers,
+    issuerName,
+    setIssuerName,
+    country,
+    setcountry,
+    issuerJobDesignation,
+    setIssuerJobDesignation,
+    idProofApprovers,
+    setIdProofApprovers,
+    noteSignByHigherAuth,
+    setNoteSignByHigherAuth,
+    approversDocument,
+    setApproversDocument,
   } = KycScript(props.setForm);
 
   return (
@@ -50,6 +62,15 @@ export const KYCform = (props) => {
           onChange={(e) => setdescription(e.target.value)}
           placeholder="Description of the Organization"
         />
+        <label htmlFor="email">Country*</label>
+        <input
+          type="text"
+          id="email"
+          value={country}
+          name="country"
+          placeholder="Country"
+          onChange={(e) => setcountry(e.target.value)}
+        />
         <label htmlFor="email">Official Website*</label>
         <input
           type="email"
@@ -58,6 +79,24 @@ export const KYCform = (props) => {
           name="website"
           placeholder="Official Website"
           onChange={(e) => setwebsite(e.target.value)}
+        />
+        <label htmlFor="Official website">Name*</label>
+        <input
+          type="text"
+          id="phone_num"
+          value={issuerName}
+          name="name"
+          placeholder="Name"
+          onChange={(e) => setIssuerName(e.target.value)}
+        />
+        <label htmlFor="Official website">Designation*</label>
+        <input
+          type="text"
+          id="phone_num"
+          value={issuerJobDesignation}
+          name="name"
+          placeholder="Designation"
+          onChange={(e) => setIssuerJobDesignation(e.target.value)}
         />
         <label htmlFor="Official website">Official email ID*</label>
         <input
@@ -77,7 +116,7 @@ export const KYCform = (props) => {
           placeholder="Phone number"
           onChange={(e) => setcontact(e.target.value)}
         />
-        <label htmlFor="website">CIN*</label>
+        {/* <label htmlFor="website">CIN*</label>
         <input
           type="text"
           id="website"
@@ -85,7 +124,7 @@ export const KYCform = (props) => {
           value={regId}
           placeholder="CIN"
           onChange={(e) => setregId(e.target.value)}
-        />
+        /> */}
         <label htmlFor="fileselectorinput">
           ID proof of the representative*
         </label>
@@ -109,7 +148,7 @@ export const KYCform = (props) => {
             justifyContent: "center",
           }}
         >
-          Add approving authorities. (optional)
+          *Add approving authorities.
           <h5>
             Approving authorities have to approve any document issuance via
             email.
@@ -239,6 +278,44 @@ export const KYCform = (props) => {
             <label htmlFor="add-approver-email">Email: </label>
             <input type="text" id="add-approver-email" />
           </div>
+          <div
+            style={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "1fr 2fr",
+            }}
+          >
+            <label htmlFor="fileselectorinput">
+              ID proof of the representative*
+            </label>
+            {idProofApprovers.name}
+            <input
+              type="file"
+              id="fileselectorinput"
+              onChange={(e) => {
+                setIdProofApprovers(e.target.files[0]);
+              }}
+            />
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "1fr 2fr",
+            }}
+          >
+            <label htmlFor="fileselectorinput">
+              Upload the Note(signed by highest authorities)*
+            </label>
+            {noteSignByHigherAuth.name}
+            <input
+              type="file"
+              id="fileselectorinput"
+              onChange={(e) => {
+                setNoteSignByHigherAuth(e.target.files[0]);
+              }}
+            />
+          </div>
           <button
             onClick={() => {
               setApprovers((prev) => [
@@ -249,6 +326,13 @@ export const KYCform = (props) => {
                     "add-approver-designation"
                   ).value,
                   email: document.getElementById("add-approver-email").value,
+                },
+              ]);
+              setApproversDocument((prev) => [
+                ...prev,
+                {
+                  idProofApprovers: idProofApprovers,
+                  noteSignByHigherAuth: noteSignByHigherAuth,
                 },
               ]);
               setApproverDialog(false);
