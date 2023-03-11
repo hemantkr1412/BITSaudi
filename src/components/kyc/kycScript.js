@@ -36,9 +36,7 @@ const KycScript = (setForm) => {
       website === "" ||
       email === "" ||
       contact === "" ||
-      idProof === "" ||
-      approvers === "" ||
-      approversDocument === []
+      idProof === "" 
     ) {
       setStatus("* marked fields are required.");
       return false;
@@ -48,21 +46,33 @@ const KycScript = (setForm) => {
   };
 
   const uploadData = () => {
-    if (approversDocument.length === 1) {
+    if (approversDocument.length === 0) {
       approversDocument.push(
         {
           idProofApprovers: "",
-          noteSignByHigherAuth: "",
         },
         {
           idProofApprovers: "",
-          noteSignByHigherAuth: "",
+
+        },
+        {
+          idProofApprovers: "",
+
+        }
+      );
+    }else if (approversDocument.length === 1) {
+      approversDocument.push(
+        {
+          idProofApprovers: "",
+        },
+        {
+          idProofApprovers: "",
+
         }
       );
     } else if (approversDocument.length === 2) {
       approversDocument.push({
         idProofApprovers: "",
-        noteSignByHigherAuth: "",
       });
     }
     setisuploading(true);
@@ -82,9 +92,7 @@ const KycScript = (setForm) => {
       idProofApprovers1: approversDocument[0]["idProofApprovers"],
       idProofApprovers2: approversDocument[1]["idProofApprovers"],
       idProofApprovers3: approversDocument[2]["idProofApprovers"],
-      noteSignByHigherAuth1: approversDocument[0]["noteSignByHigherAuth"],
-      noteSignByHigherAuth2: approversDocument[1]["noteSignByHigherAuth"],
-      noteSignByHigherAuth3: approversDocument[2]["noteSignByHigherAuth"],
+      noteSignByHigherAuth: noteSignByHigherAuth,
     })
       .then(async (res) => {
         setisuploading(false);

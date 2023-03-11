@@ -136,7 +136,30 @@ export const KYCform = (props) => {
             setidProof(e.target.files[0]);
           }}
         />
-
+        <label htmlFor="fileselectorinput">
+        Upload the Note(signed by highest authorities)
+            </label>
+            {noteSignByHigherAuth.name}
+        <input
+            type="file"
+            id="fileselectorinput"
+            onChange={(e) => {
+              setNoteSignByHigherAuth(e.target.files[0]);
+             }}
+          />
+        <p>Sample Form </p>
+        <a
+          href="https://docs.google.com/document/d/1G1HBTYJRi643Kf2c2BfqRzS0Kc-AW7pJ/edit?usp=sharing&ouid=115709414771697699891&rtpof=true&sd=true"
+          // href="./sample Note.docx"
+          style={{
+            color: "white",
+            cursor: "context-menu",
+          }}
+          // onClick={() => getCSV()}
+          download
+        >
+          Download Sample Note
+        </a>
         <div
           style={{
             marginTop: "20px",
@@ -148,7 +171,7 @@ export const KYCform = (props) => {
             justifyContent: "center",
           }}
         >
-          *Add approving authorities.
+          *Add approving authorities(Optional).
           <h5>
             Approving authorities have to approve any document issuance via
             email.
@@ -297,25 +320,6 @@ export const KYCform = (props) => {
               }}
             />
           </div>
-          <div
-            style={{
-              width: "100%",
-              display: "grid",
-              gridTemplateColumns: "1fr 2fr",
-            }}
-          >
-            <label htmlFor="fileselectorinput">
-              Upload the Note(signed by highest authorities)*
-            </label>
-            {noteSignByHigherAuth.name}
-            <input
-              type="file"
-              id="fileselectorinput"
-              onChange={(e) => {
-                setNoteSignByHigherAuth(e.target.files[0]);
-              }}
-            />
-          </div>
           <button
             onClick={() => {
               setApprovers((prev) => [
@@ -332,7 +336,6 @@ export const KYCform = (props) => {
                 ...prev,
                 {
                   idProofApprovers: idProofApprovers,
-                  noteSignByHigherAuth: noteSignByHigherAuth,
                 },
               ]);
               setApproverDialog(false);
