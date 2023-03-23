@@ -16,6 +16,7 @@ const KycScript = (setForm) => {
   const [idProof, setidProof] = useState("");
   const [approvers, setApprovers] = useState(user.userData.approvers);
   const [issuerName, setIssuerName] = useState("");
+  const [issuerLastName, setIssuerLastName] = useState("");
   const [country, setcountry] = useState("");
   const [issuerJobDesignation, setIssuerJobDesignation] = useState("");
   const [idProofApprovers, setIdProofApprovers] = useState("");
@@ -35,10 +36,26 @@ const KycScript = (setForm) => {
       name === "" ||
       website === "" ||
       email === "" ||
+      regId===""||
       contact === "" ||
-      idProof === "" 
-    ) {
+      idProof === ""||
+      approvers===""||
+      approversDocument ===[]||
+      issuerName === "" ||
+      issuerLastName === "" ||
+      country === "" ||
+      issuerJobDesignation === "" ||
+      idProofApprovers === "" ||
+      noteSignByHigherAuth === ""||
+      contact===""
+      
+    ){
+
+    
       setStatus("* marked fields are required.");
+      return false;
+    }else if(approversDocument.length>3) {
+      setStatus("Maximum 3 approvers are allowed.");
       return false;
     } else {
       return true;
@@ -46,35 +63,22 @@ const KycScript = (setForm) => {
   };
 
   const uploadData = () => {
-    if (approversDocument.length === 0) {
+    if (approversDocument.length===1){
+      approversDocument.push(
+          {
+            idProofApprovers: "",
+          },
+          {
+            idProofApprovers: "",
+          }
+      )
+    }else if(approversDocument.length===2){
       approversDocument.push(
         {
           idProofApprovers: "",
-        },
-        {
-          idProofApprovers: "",
-
-        },
-        {
-          idProofApprovers: "",
-
         }
-      );
-    }else if (approversDocument.length === 1) {
-      approversDocument.push(
-        {
-          idProofApprovers: "",
-        },
-        {
-          idProofApprovers: "",
-
-        }
-      );
-    } else if (approversDocument.length === 2) {
-      approversDocument.push({
-        idProofApprovers: "",
-      });
-    }
+    )
+  }
     setisuploading(true);
     userApi({
       account: user.userAccount,
@@ -82,6 +86,7 @@ const KycScript = (setForm) => {
       description: description,
       country: country,
       issuerName: issuerName,
+      issuerLastName: issuerLastName,
       issuerDesignation: issuerJobDesignation,
       website: website,
       email: email,
@@ -105,6 +110,7 @@ const KycScript = (setForm) => {
         setStatus("Something went wrong. Please try again.");
       });
   };
+
 
   return {
     status,
@@ -138,6 +144,9 @@ const KycScript = (setForm) => {
     setNoteSignByHigherAuth,
     approversDocument,
     setApproversDocument,
+    issuerLastName,
+    setIssuerLastName,
+    
   };
 };
 

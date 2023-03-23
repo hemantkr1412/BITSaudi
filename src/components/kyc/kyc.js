@@ -7,6 +7,7 @@ import UserContext from "../../context/userContext/UserContext";
 const KYC = () => {
   const user = useContext(UserContext);
   const [isform, setForm] = useState(false);
+ 
   return (
     <div className="individualpage">
       {isform ? (
@@ -42,8 +43,8 @@ const KYC = () => {
           )}
           {user.userData.status === "Revoked" && (
             <>
-              <h2>Your KYC approval has been revoked.</h2>
-              <h3>Reason: {user.userData.comment}</h3>
+              <h2>Your KYC approval has been revoked</h2>
+              <h3>Reason:{user.userData.comment}</h3>
               <h3>For more support:</h3>
               <h3>email us at hello@beimagine.tech</h3>
               <button onClick={() => setForm(true)}>Restart KYC</button>

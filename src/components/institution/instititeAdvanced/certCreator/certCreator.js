@@ -3,7 +3,6 @@ import { useState, useContext, useEffect } from "react";
 import Draggable from "react-draggable";
 import PanToolIcon from "@mui/icons-material/PanTool";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import TextIncreaseIcon from "@mui/icons-material/TextIncrease";
 import TextDecreaseIcon from "@mui/icons-material/TextDecrease";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -15,22 +14,67 @@ import { templateApi } from "../../../Scripts/apiCalls";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import UserContext from "../../../../context/userContext/UserContext";
+import QRCode from "react-qr-code";
 
 const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
+  
   const [selectedImage, setSelectedImage] = useState(uploadIcon);
   const [uploadedImage, setUploadedImage] = useState(null);
-  const [selectedVariables, setSelectedVariables] = useState([]);
-  const [selectedVariablesData, setSelectedVariablesData] = useState([]);
+  const [selectedVariables, setSelectedVariables] = useState([
+    {
+      name: "qrcode",
+      height: "5",
+      width: "30",
+      x_pos: "0",
+      y_pos: "0",
+      color: "#000000",
+      type: "qr",
+    },
+  ]);
+  const [selectedVariablesData, setSelectedVariablesData] = useState([
+    {
+      name: "qrcode",
+      height: "5",
+      width: "30",
+      x_pos: "50",
+      y_pos: "50",
+      color: "#000000",
+      type: "qr",
+    },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const user = useContext(UserContext);
   const [imageWidth, setImageWidth] = useState(100);
   const [templateName, setTemplateName] = useState("");
+  const [variableName, setvariableName] = useState(
+    "Other (specify)"
+  );
+  const [isOtherselect, setisOtherselect] = useState(false);
+  const [specifyother, setspecifyother] = useState(
+    "Other (specify)"
+  );
+  const [imageHeight, setimageHeight] = useState(100);
+
+  // const imageHeight = document.getElementById(
+  //   "cert-creator-preview"
+  // ).offsetHeight;
 
   useEffect(() => {
     setImageWidth(Math.min(window.innerWidth - 100, 700));
-  }, [window]);
+    if (String(variableName).length === 0) {
+      setspecifyother("Other (specify)");
+    }
 
-  const variableOptions = [
+    try {
+      setimageHeight(
+        document.getElementById("cert-creator-preview").offsetHeight
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+  const variableOptions2 = [
     "Student Name",
     "Mother Name",
     "Enrollment No",
@@ -58,7 +102,14 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
     "Issued Date",
     "Signatory Name",
     "Signatory Designation",
+    specifyother,
   ];
+
+  // const variableOptions2 = t("Institutions.certCreator.variableOptions", {
+  //   returnObjects: true,
+  // });
+  // variableOptions2.push(specifyother);
+  // const myArray = JSON.parse(variableOptions2)
 
   const handleNext = async () => {
     setIsLoading(true);
@@ -126,6 +177,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
           id="cert-creator-preview"
           onClick={() => document.getElementById("image-selector").click()}
         />
+
         {selectedVariables.length > 0 &&
           selectedVariables.map((variable) => (
             <DragVariable
@@ -135,6 +187,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
               setSelectedVariables={setSelectedVariables}
               setSelectedVariablesData={setSelectedVariablesData}
               imageWidth={imageWidth}
+              imageHeight={imageHeight}
               key={"variable-added-by-dragging-" + variable.name}
             />
           ))}
@@ -148,10 +201,22 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
           marginTop: "20px",
         }}
       >
-        <select id="draggable-variable-selector">
-          Select Variables
-          {variableOptions.map((option) => (
-            <option>{option}</option>
+        <select
+          id="draggable-variable-selector"
+          onChange={(e) => {
+            let selectvalue = e.target.value;
+            if (selectvalue === variableName) {
+              setisOtherselect(true);
+            } else {
+              setisOtherselect(false);
+            }
+            console.log(isOtherselect);
+          }}
+        >
+          Select Variable
+          {variableOptions2.map((option) => (
+            // <option>{option}</option>
+            <option value={option}>{option}</option>
           ))}
         </select>
 
@@ -167,6 +232,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
                 width: "30",
                 height: "5",
                 color: "#000000",
+                type: "text",
               },
             ]);
             setSelectedVariablesData([
@@ -179,14 +245,35 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
                 width: "30",
                 height: "5",
                 color: "#000000",
+                type: "text",
               },
             ]);
+            setvariableName("Other (specify)");
+            setspecifyother("Other (specify)");
           }}
         >
           Add Variable +
         </button>
+        <label
+          style={{ display: `${isOtherselect ? "" : "none"}` }}
+          htmlFor="template-creater-variable-name"
+        >
+          Variable Name <span style={{ fontSize: "11px" }}>(Specify name)</span>
+        </label>
+        <input
+          style={{ display: `${isOtherselect ? "" : "none"}` }}
+          type="text"
+          id="template-creater-variable-name"
+          value={variableName}
+          onChange={(e) => {
+            setvariableName(e.target.value);
+            setspecifyother(e.target.value);
+          }}
+        />
 
-        <label htmlFor="template-creater-template-name">Template Name</label>
+        <label htmlFor="template-creater-template-name">
+        Template Name
+        </label>
         <input
           type="text"
           id="template-creater-template-name"
@@ -200,7 +287,8 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
             handleNext();
           }}
         >
-          Next {">"}
+          Next
+          {">"}
         </button>
       </div>
       {isLoading && <LoadingPage />}
@@ -219,12 +307,31 @@ const DragVariable = ({
   imageWidth,
 }) => {
   const [isColorPicker, setIsColorPicker] = useState(false);
+  const [imageHeight, setimageHeight] = useState(100);
 
   const startingPositionX = 50 - parseFloat(variable.width) / 2 + "%";
   const startingPositionY = 50 - parseFloat(variable.height) + "%";
-  const imageHeight = document.getElementById(
-    "cert-creator-preview"
-  ).offsetHeight;
+
+  useEffect(() => {
+    console.log(imageHeight);
+    console.log(
+      -imageHeight / 2 + (parseFloat(variable.height) * imageHeight) / 200
+    );
+    console.log(
+      imageHeight / 2 - (parseFloat(variable.height) * imageHeight) / 200
+    );
+    try {
+      setimageHeight(
+        document.getElementById("cert-creator-preview").offsetHeight
+      );
+      console.log(
+        "Image height---",
+        document.getElementById("cert-creator-preview").offsetHeight
+      );
+    } catch (err) {
+      console.log("could not set height");
+    }
+  });
 
   const getTextHeight = (variableHeight) => {
     let fullheight = 200;
@@ -332,9 +439,27 @@ const DragVariable = ({
               width: "100%",
               textAlign: "center",
               fontSize: getTextHeight(variable.height),
+              display: "flex",
+              padding: "0px",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            {variable.name}
+            {variable.type === "text" && variable.name}
+            {variable.type === "qr" && (
+              <QRCode
+                size={256}
+                bgColor={"rgba(0, 0, 0, 0)"}
+                fgColor={variable.color}
+                style={{
+                  width:
+                    (parseFloat(variable.height) * imageHeight) / 100 + "px",
+                  height:
+                    (parseFloat(variable.height) * imageHeight) / 100 + "px",
+                }}
+                value={"https://bitmemoir.com/verify"}
+              />
+            )}
           </div>
           <div id="handle">
             <PanToolIcon
@@ -388,11 +513,18 @@ const DragVariable = ({
                 const thisIndex = selectedVariables.indexOf(variable);
                 console.log(thisIndex);
                 let newVariables = [];
+                let newVariablesData = [];
                 selectedVariables.map((myVariable, index) => {
                   if (index !== thisIndex) {
                     newVariables.push(myVariable);
                   }
                   setSelectedVariables(newVariables);
+                });
+                selectedVariablesData.map((myVariable, index) => {
+                  if (index !== thisIndex) {
+                    newVariablesData.push(myVariable);
+                  }
+                  setSelectedVariablesData(newVariables);
                 });
               }}
             />

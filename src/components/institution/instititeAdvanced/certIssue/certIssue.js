@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
-import { issueApi } from "../../../Scripts/apiCalls";
+import { issueApi, nonEssenCertissueApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Subscription from "../subscription/subscription";
 
-const CertIssue = ({ setView, certData }) => {
+const CertIssue = ({ setView, certData, category }) => {
   const user = useContext(UserContext);
   const [certNumber, setCertNumber] = useState(0);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -13,6 +13,7 @@ const CertIssue = ({ setView, certData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubscription, setIsSubscription] = useState(false);
   const [status, setStatus] = useState("");
+  
 
   const download = function (data) {
     const blob = new Blob([data], { type: "text/csv" });
@@ -40,7 +41,9 @@ const CertIssue = ({ setView, certData }) => {
   const getCSV = async function () {
     const data = ["S.No."];
     certData.variables.map((variable) => {
-      data.push(variable.name);
+      if (variable.type !== "qr") {
+        data.push(variable.name);
+      }
     });
 
     data.push("Recipient Address");
@@ -51,32 +54,66 @@ const CertIssue = ({ setView, certData }) => {
   };
 
   const uploadFile = () => {
-    setIsLoading(true);
-    setStatus("Issuing certificates...");
-    issueApi({
-      template_id: certData.id,
-      file: uploadedFile,
-      account: user.userAccount,
-    })
-      .then((res) => {
-        if (res === "issued") {
-          setStatus("Certificates issued successfully.");
-        } else if (res === "pending approval") {
-          setStatus("Certificate order sent for approval.");
-        }
-        user.poppulateUserData();
-        console.log(res);
+    if (category === "non educational certificates") {
+      setIsLoading(true);
+      setStatus("Issuing certificates...");
+      nonEssenCertissueApi({
+        template_id: certData.id,
+        file: uploadedFile,
+        account: user.userAccount,
       })
-      .catch((err) => {
-        console.log(err);
-        setIsLoading(false);
-        alert("Something went wrong. Please check the data.");
-      });
+        .then((res) => {
+          if (res === "issued") {
+            setStatus("Certificates issued successfully.");
+          } else if (res === "pending approval") {
+            setStatus("Certificate order sent for approval.");
+          }
+          user.poppulateUserData();
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+          alert("Something went wrong. Please check the data.");
+        });
+    } else {
+      setIsLoading(true);
+      setStatus("Issuing certificates...");
+      issueApi({
+        template_id: certData.id,
+        file: uploadedFile,
+        account: user.userAccount,
+      })
+        .then((res) => {
+          if (res === "issued") {
+            setStatus("Certificates issued successfully.");
+          } else if (res === "pending approval") {
+            setStatus("Certificate order sent for approval.");
+          }
+          user.poppulateUserData();
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+          alert("Something went wrong. Please check the data.");
+        });
+    }
   };
 
   const limitExceeded = certNumber > parseInt(user.userData.nft_quota);
+  const today=new Date();
+  const date=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  console.log(date);
+  const d = new Date(user.userData.subscription.end_Date);
+  const end_date=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+  console.log(end_date);
+  console.log(date>end_date);
 
   if (parseInt(user.userData.nft_quota) === 0)
+    return <Subscription back={() => setView("education")} />;
+
+  if (date >end_date)
     return <Subscription back={() => setView("education")} />;
 
   if (isSubscription)
@@ -96,7 +133,9 @@ const CertIssue = ({ setView, certData }) => {
       <h1>Issue Certificates</h1>
 
       <div style={{ width: "500px" }}>
-        <label htmlFor="cert-number-input-for-issue">No. of certificates</label>
+        <label htmlFor="cert-number-input-for-issue">
+           Number of Certificates
+        </label>
         <input
           type="number"
           id="cert-number-input-for-issue"
@@ -105,15 +144,15 @@ const CertIssue = ({ setView, certData }) => {
         />
         {limitExceeded && (
           <div className="error">
-            Certificate limit exceeded. Current limit ={" "}
+            Certificate limit exceeded. Current limit={" "}
             {user.userData.nft_quota}
             <button onClick={() => setIsSubscription(true)}>
-              Increase limit
+            Increase Limit
             </button>
           </div>
         )}
 
-        <h3>Upload CSV file</h3>
+        <h3>Upload Student Data file (CSV Format)</h3>
         <input
           type="file"
           onChange={(e) => {
@@ -122,7 +161,9 @@ const CertIssue = ({ setView, certData }) => {
             setUploadedFileName(e.target.files[0]["name"]);
           }}
         />
-        <h3>File: {uploadedFileName}</h3>
+        <h3>
+        File: {uploadedFileName}
+        </h3>
         <a
           style={{
             color: "white",
@@ -132,6 +173,9 @@ const CertIssue = ({ setView, certData }) => {
         >
           Download CSV template
         </a>
+        {category === "educational certificates" && (
+          <h4>Note : This is Essential certificates you need Approver Permission</h4>
+        )}
       </div>
 
       <div
@@ -143,7 +187,7 @@ const CertIssue = ({ setView, certData }) => {
           justifyContent: "space-around",
         }}
       >
-        <button onClick={() => setView(1)}>{"< "} Back</button>
+        <button onClick={() => setView("education")}>{"< "} Back</button>
         <button
           onClick={() => {
             if (limitExceeded) {
@@ -163,6 +207,7 @@ const CertIssue = ({ setView, certData }) => {
 export default CertIssue;
 
 const LoadingPage = ({ status, setView }) => {
+  
   return (
     <div
       style={{
@@ -187,7 +232,7 @@ const LoadingPage = ({ status, setView }) => {
         <h4>You can close the window.</h4>
       )}
       {status !== "Issuing certificates..." && (
-        <button onClick={() => setView(0)}>OK</button>
+        <button onClick={() => setView("education")}>OK</button>
       )}
     </div>
   );

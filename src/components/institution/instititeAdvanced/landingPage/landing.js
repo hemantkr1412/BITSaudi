@@ -16,11 +16,14 @@ import KYC from "../../../kyc/kyc";
 import Subscription from "../subscription/subscription";
 import CertIssue from "../certIssue/certIssue";
 
+
 const InstitutesLandingPage = () => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(false);
   const [view, setView] = useState("education");
   const [certData, setCertData] = useState(null);
+  const [category, setCategory] = useState("educational certificates");
+  
 
   const [sector, setSector] = useState({
     text: "Education",
@@ -123,13 +126,13 @@ const InstitutesLandingPage = () => {
   const Navbar = () => {
     return (
       <div className="institutenavbar" style={{ left: "0px", height: "50px" }}>
-        {/* <MenuIcon
+        <MenuIcon
           fontSize="large"
           sx={{ margin: "0px 30px", "&:hover": { color: "var(--primary)" } }}
           onClick={() => setIsSidebar(!isSidebar)}
-        /> */}
+        />
         {sector["logo"]}
-        Institution
+        {sector["text"]}
       </div>
     );
   };
@@ -163,10 +166,12 @@ const InstitutesLandingPage = () => {
                   setView={setView}
                   setCertData={setCertData}
                   certData={certData}
+                  category={category}
+                  setCategory={setCategory}
                 />
               )}
               {view === "certIssue" && (
-                <CertIssue setView={setView} certData={certData} />
+                <CertIssue setView={setView} certData={certData} category={category}/>
               )}
             </div>
           )}

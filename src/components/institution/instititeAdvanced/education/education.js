@@ -13,16 +13,17 @@ import { useEffect } from "react";
 import { templateApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 
-const Education = ({ setView, certData, setCertData }) => {
+
+const Education = ({ setView, certData, setCertData,category, setCategory }) => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(true);
   const [isTemplateCreator, setIsTemplateCreator] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState(certData);
-  const [category, setCategory] = useState("educational certificates");
+  
 
   const navbuttons = [
     {
-      text: "Certificates",
+      text: "Degree Certificates",
       logo: (
         <div>
           <WebIcon />
@@ -31,13 +32,13 @@ const Education = ({ setView, certData, setCertData }) => {
       category: "educational certificates",
     },
     {
-      text: "Badges",
+      text: "Diploma Certificates",
       logo: (
         <div>
           <WorkspacePremiumIcon />
         </div>
       ),
-      category: "educational badges",
+      category: "non educational certificates",
     },
     // {
     //   text: "Certificates (Non Educational)",
@@ -297,7 +298,7 @@ const Education = ({ setView, certData, setCertData }) => {
                   textAlign: "center",
                 }}
               >
-                <h2>Select Template</h2>
+                <h2>"Select Template</h2>
                 <h3>
                   {" "}
                   {"<< "}Select a ready made template from the templates section{" "}
