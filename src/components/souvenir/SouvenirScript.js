@@ -13,6 +13,7 @@ const SouvenirScript = () => {
   const [assetName, setAssetName] = useState("");
   const [assetDescription, setAssetDescription] = useState("");
   const [recipient, setRecipient] = useState("");
+  const [recipientEmail, setRecipientEmail] = useState("");
   const [addFrameopen, setAddFrameOpen] = useState(false);
   const [previewOpen, setPreviewOpen] = useState(false);
 
@@ -36,10 +37,12 @@ const SouvenirScript = () => {
 
   const checkForEmptyData = () => {
     let isAddressValid = true;
-    try {
-      isAddressValid = ethers.utils.getAddress(recipient);
-    } catch {
-      isAddressValid = false;
+    if (recipient !== "") {
+      try {
+        isAddressValid = ethers.utils.getAddress(recipient);
+      } catch {
+        isAddressValid = false;
+      }
     }
     if (assetName === "") {
       setStatus("Asset name is required.");
@@ -47,7 +50,7 @@ const SouvenirScript = () => {
     } else if (assetDescription === "") {
       setStatus("Asset description is required");
       return false;
-    } else if (!isAddressValid) {
+    } else if (!isAddressValid && recipient !== "") {
       setStatus("Invalid recipient address");
       return false;
     } else if (uploadedImage === null) {
@@ -60,6 +63,7 @@ const SouvenirScript = () => {
       return true;
     }
   };
+  
 
   const checkForFileSize = () => {
     let filesize = parseFloat(uploadedImage.size) / 1024;
@@ -83,6 +87,7 @@ const SouvenirScript = () => {
       asset_name: assetName,
       asset_description: assetDescription,
       recipient: recipient,
+      recipientEmail: recipientEmail,
       frame: frameName,
     })
       .then(async (res) => {
@@ -108,6 +113,8 @@ const SouvenirScript = () => {
     setAssetDescription,
     recipient,
     setRecipient,
+    recipientEmail,
+    setRecipientEmail,
     saveImage,
     submitHandler,
     addFrameopen,

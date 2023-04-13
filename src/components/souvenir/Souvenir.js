@@ -25,6 +25,8 @@ export const Souvenir = () => {
     setAssetDescription,
     recipient,
     setRecipient,
+    recipientEmail,
+    setRecipientEmail,
     saveImage,
     submitHandler,
     addFrameopen,
@@ -97,13 +99,21 @@ export const Souvenir = () => {
           value={assetName}
           onChange={(e) => setAssetName(e.target.value)}
         />
-        <label htmlFor="recipientaddress">Recipient Wallet Address*</label>
+        <label htmlFor="recipientaddress">Recipient Wallet Address</label>
         <input
           type="text"
           id="recipientaddress"
           placeholder="Enter Recipient Wallet Address"
           value={recipient}
           onChange={(e) => setRecipient(e.target.value)}
+        />
+        <label htmlFor="recipientemail">Recipient Email Address</label>
+        <input
+          type="text"
+          id="recipientemail"
+          placeholder="Enter Recipient Email Address"
+          value={recipientEmail}
+          onChange={(e) => setRecipientEmail(e.target.value)}
         />
         <label htmlFor="description">Description*</label>
         <textarea
