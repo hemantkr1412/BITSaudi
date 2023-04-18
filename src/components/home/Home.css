@@ -116,6 +116,8 @@
   .aboutsectionmobile {
     display: flex;
   }
+  
+
 }
 
 /* Description Section */
@@ -503,6 +505,22 @@
   grid-template-columns: 1fr 1fr;
   height: 50px;
 }
+.joinContainer {
+  background-color: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 100px 0px;
+  max-width: 1950px;
+}
+.joinContainerHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 
 @media only screen and (max-width: 600px) {
   .benefit {
@@ -510,6 +528,15 @@
   }
   .benefitdivider {
     width: 300px;
+  }
+  .joinContainerHeading {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .joinContainer{
+    margin-top: 200px;
+
   }
 }
 
@@ -532,6 +559,8 @@
 
   animation: blink 0.8s infinite;
 }
+
+
 
 @keyframes blink {
   from {

@@ -6,11 +6,13 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../context/userContext/UserContext";
+import { Button } from "@mui/material";
 
 const Navbar = () => {
   const user = useContext(UserContext);
   const navigate = useNavigate();
   const [isMenu, setIsMenu] = useState(false);
+  const [aboutustext , setaboutustext] = useState("About Us")
 
   const Menubar = () => {
     return (
@@ -78,11 +80,38 @@ const Navbar = () => {
         <div
           className="menuitem"
           onClick={() => {
+            navigate("/bitwalletpage");
+            setIsMenu(false);
+          }}
+        >
+          BitWallet
+        </div>
+        <div
+          className="menuitem"
+          onClick={() => {
             navigate("/contact");
             setIsMenu(false);
           }}
         >
           Contact Us
+        </div>
+        <div
+          className="menuitem"
+          onClick={() => {
+            navigate("/team");
+            setIsMenu(false);
+          }}
+        >
+          Team
+        </div>
+        <div
+          className="menuitem"
+          onClick={() => {
+            navigate("/roadmap");
+            setIsMenu(false);
+          }}
+        >
+          RoadMap
         </div>
       </div>
     );
@@ -104,6 +133,28 @@ const Navbar = () => {
         </div>
         <div className="navbutton" onClick={() => navigate("/verify")}>
           Verify
+        </div>
+        <div className="navbutton" onClick={() => navigate("/bitwalletpage")}>
+          BitWallet
+        </div>
+        <div className="navbutton" >
+          <div class="dropdown">
+            <Button class="dropbtn">{aboutustext}</Button>
+            <div class="dropdown-content">
+              <a  onClick={() => { 
+                navigate("/team")
+                setaboutustext("Team")
+              } }>Team</a>
+              <a onClick={() => {navigate("/roadmap") 
+              setaboutustext("RoadMap")}}>RoadMap</a>
+              <a onClick={() => {navigate("/whitepapper") 
+              setaboutustext("WhitePaper")
+            }}>WhitePaper </a>
+              <a onClick={() => {navigate("/tokenomics")
+              setaboutustext("Tokenomics")
+            }}>Tokenomics</a>
+          </div>
+        </div>
         </div>
       </div>
       <div className="menucontainer">

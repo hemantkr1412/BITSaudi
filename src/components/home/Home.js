@@ -20,10 +20,32 @@ import UserContext from "../../context/userContext/UserContext";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { kpiApi } from "../Scripts/apiCalls";
+import QuestionBox from "./QuestionBox";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
 
+function TabPanel(props) {
+  const { value } = props;
+  
+  
+
+  return (
+    <div>
+      { value === 0 ? <QuestionBox  /> :
+      <>
+      <iframe width="560" height="315" src={"https://www.youtube.com/embed/YvG1yNJhu0E"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </>}
+    </div>
+  );
+}
 const Home = () => {
   const user = useContext(UserContext);
   const navigate = useNavigate();
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   const solutionsData = [
     {
       image: solutionimg1,
@@ -318,6 +340,41 @@ const Home = () => {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="joinContainer">
+        <div className="joinContainerHeading">
+          FAQs
+        </div>
+        {/* <QuestionBox /> */}
+      <Box
+      sx={{
+        width: "85%",
+        maxWidth: "750px",
+        border: "1px solid lightgrey",
+        borderRadius: "20px",
+        padding: "20px",
+        margin: "20px",
+        // backgroundColor: "#D8E4F7",
+      }}
+    >
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
+          <Tab label="FAQs" sx={{ color: "black" }} />
+          <Tab label="Video FAQs" sx={{ color: "black" }} />
+        </Tabs>
+      </Box>
+      <TabPanel
+        value={value}
+        // index={0}
+        // users={props.users}
+        // update={props.update}
+      ></TabPanel>
+    </Box>
       </div>
     </>
   );
