@@ -342,12 +342,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="joinContainer">
-        <div className="joinContainerHeading">
+      {/* <div className="joinContainer"> */}
+        {/* <div className="joinContainerHeading">
           FAQs
-        </div>
+        </div> */}
         {/* <QuestionBox /> */}
-      <Box
+      {/* <Box
       sx={{
         width: "85%",
         maxWidth: "750px",
@@ -374,8 +374,8 @@ const Home = () => {
         // users={props.users}
         // update={props.update}
       ></TabPanel>
-    </Box>
-      </div>
+    </Box> */}
+      {/* </div> */}
     </>
   );
 };

@@ -113,13 +113,29 @@ const Navbar = () => {
         >
           RoadMap
         </div>
+        <div
+         className="menuitem"
+         onClick={() => {
+           navigate("/partners");
+           setIsMenu(false);
+         }}
+        >
+          Partners
+        </div>
       </div>
     );
   };
   return (
     <div className="navbar">
+      <div className="logocontainer">
+        <img
+          src={logo}
+          alt="BEYOND IMAGINATION TECHNOLOGIES"
+          onClick={() => navigate("/home")}
+        />
+      </div>
       <div className="navbuttoncontainer">
-        <div className="navbutton" onClick={() => navigate("/individual")}>
+        {/* <div className="navbutton" onClick={() => navigate("/individual")}>
           Individuals
         </div>
         <div className="navbutton" onClick={() => navigate("/view")}>
@@ -127,6 +143,25 @@ const Navbar = () => {
         </div>
         <div className="navbutton" onClick={() => navigate("/institution")}>
           Institutions
+        </div> */}
+        <div className="navbutton" >
+          <div class="dropdown">
+            <Button class="dropbtn">Create</Button>
+            <div class="dropdown-content">
+              <a  onClick={() => { 
+                navigate("/individual")
+                // setaboutustext("Team")
+              } }>Individuals</a>
+              <a onClick={() => {navigate("/institution") 
+            }}>          Sectors
+            </a>
+             
+              
+          </div>
+        </div>
+        </div>
+        <div className="navbutton" onClick={() => navigate("/view")}>
+          View
         </div>
         <div className="navbutton" onClick={() => navigate("/souvenir")}>
           Souvenirs
@@ -137,22 +172,28 @@ const Navbar = () => {
         <div className="navbutton" onClick={() => navigate("/bitwalletpage")}>
           BitWallet
         </div>
+        {/* <div className="navbutton" onClick={() => navigate("/partners")}>
+        Partners
+        </div> */}
         <div className="navbutton" >
           <div class="dropdown">
             <Button class="dropbtn">{aboutustext}</Button>
             <div class="dropdown-content">
               <a  onClick={() => { 
                 navigate("/team")
-                setaboutustext("Team")
+                // setaboutustext("Team")
               } }>Team</a>
               <a onClick={() => {navigate("/roadmap") 
-              setaboutustext("RoadMap")}}>RoadMap</a>
+            }}>RoadMap</a>
               <a onClick={() => {navigate("/whitepapper") 
-              setaboutustext("WhitePaper")
+              // setaboutustext("WhitePaper")
             }}>WhitePaper </a>
               <a onClick={() => {navigate("/tokenomics")
-              setaboutustext("Tokenomics")
+              // setaboutustext("Tokenomics")
             }}>Tokenomics</a>
+              <a onClick={() => {navigate("/partners")
+              // setaboutustext("Partners")
+            }}>Partners</a>
           </div>
         </div>
         </div>
@@ -167,13 +208,13 @@ const Navbar = () => {
         />
       </div>
       {isMenu && <Menubar />}
-      <div className="logocontainer">
+      {/* <div className="logocontainer">
         <img
           src={logo}
           alt="BEYOND IMAGINATION TECHNOLOGIES"
           onClick={() => navigate("/home")}
         />
-      </div>
+      </div> */}
       <div className="navrightbuttoncontainer">
         <div className="contactusbutton">
           <button onClick={() => navigate("/contact")}>Contact Us</button>

@@ -19,15 +19,15 @@ const Contact = () => {
         // marginTop: "50px"
       }}>
 
-      <div>
-        <p>Address : Beyond imagination tech LLC </p>
+      <div className="details">
+        <p ><span style={{marginRight:"10px"}}>Address :</span> Beyond imagination tech LLC </p>
         <p style={{marginLeft:"70px"}}>M03 Laffa restaurant building, </p>
         <p className="paraAdd"> Sheikh Khalifa Bin Zayed St - opp. Burjuman Mall, </p>
         <p style={{marginLeft:"50px"}}> Dubai,United Arab Emirates</p>
       </div>
       </div>
-      <h3>Email : support@beimagine.tech</h3>
-      <h4>Marketing : marketing@beimagine.tech</h4>
+      <p><span style={{marginRight:"42px"}}>Email :</span><span style={{marginRight:"15px"}}>support@beimagine.tech</span></p>
+      <p>Marketing : marketing@beimagine.tech</p>
       <h3>Check out our social:</h3>
       <div className="contactsocialcontainer">
         <img

@@ -24,6 +24,7 @@ import { Tokenomics } from "./components/about/Tokenomics";
 import { Roadmap } from "./components/about/Roadmap";
 import { Team } from "./components/about/Team";
 import Body from "./components/BitWallet/Components/body/body";
+import { Partners } from "./components/about/Partner";
 // context
 import UserState from "./context/userContext/userState";
 
@@ -69,6 +70,7 @@ function App() {
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/team" element={<Team/>} />
             <Route path="/bitwalletpage" element={<Body/>} />
+            <Route path="/partners" element={<Partners/>} />
           </Routes>
           <Footer />
         </UserState>

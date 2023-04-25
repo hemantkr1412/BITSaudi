@@ -96,7 +96,7 @@ const Body = () => {
                         className="md:w-[40vw] order-2 md:order-1 main_content_child_1_child">
                         <div className="content">
                             <h1 className="text-white text-2xl font-bold text-center md:text-left  md:tracking-[3px] md:text-[2.5rem] md:leading-[3.4rem] md:font-[1000] content_heading">
-                            A crypto wallet & <br /> A crypto wallet & <br /> blockchain World
+                            A crypto wallet & <br /> gateway to <br /> blockchain World
                             </h1>
                             <p className="text-white mt-3 md:text-lg text-sm text-center md:text-left content_info">
                             Enhance your user experience with BitWallet, the key to blockchain world

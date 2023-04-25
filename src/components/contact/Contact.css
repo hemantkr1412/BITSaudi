@@ -24,6 +24,9 @@
 .paraAdd{
   margin-left: 200px;
 }
+.details p{
+  font-size: 15px;
+}
 @media only screen and (max-width: 600px) {
   .paraAdd{
     margin-left: 70px;
