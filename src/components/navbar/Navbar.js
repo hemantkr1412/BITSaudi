@@ -57,7 +57,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          Institutions
+          Sectors
         </div>
         <div
           className="menuitem"
@@ -87,6 +87,15 @@ const Navbar = () => {
           BitWallet
         </div>
         <div
+         className="menuitem"
+         onClick={() => {
+           navigate("/partners");
+           setIsMenu(false);
+         }}
+        >
+          Partners
+        </div>
+        <div
           className="menuitem"
           onClick={() => {
             navigate("/contact");
@@ -112,15 +121,6 @@ const Navbar = () => {
           }}
         >
           RoadMap
-        </div>
-        <div
-         className="menuitem"
-         onClick={() => {
-           navigate("/partners");
-           setIsMenu(false);
-         }}
-        >
-          Partners
         </div>
       </div>
     );
@@ -154,9 +154,7 @@ const Navbar = () => {
               } }>Individuals</a>
               <a onClick={() => {navigate("/institution") 
             }}>          Sectors
-            </a>
-             
-              
+            </a> 
           </div>
         </div>
         </div>
