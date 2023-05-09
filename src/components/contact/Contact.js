@@ -65,7 +65,7 @@ const Contact = () => {
           width="80"
           onClick={() => {
             window.open(
-              "https://www.linkedin.com/company/beyond-imagination-technlogies-pvt-ltd/?viewAsMember=true"
+              "https://www.linkedin.com/company/bitmemoir/?viewAsMember=true"
             );
           }}
         />
