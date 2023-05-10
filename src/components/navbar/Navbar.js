@@ -161,9 +161,27 @@ const Navbar = () => {
         <div className="navbutton" onClick={() => navigate("/view")}>
           View
         </div>
-        <div className="navbutton" onClick={() => navigate("/souvenir")}>
+        {/* <div className="navbutton" onClick={() => navigate("/souvenir")}>
           Souvenirs
+        </div> */}
+        <div className="navbutton" >
+          <div class="dropdown">
+            <Button class="dropbtn">Utility</Button>
+            <div class="dropdown-content">
+              <a  onClick={() => { 
+                navigate("/souvenir")
+                // setaboutustext("Team")
+              } }>Souvenirs</a>
+              <a onClick={() => {navigate("/dnft") 
+            }}>          Batch DNFT
+            </a> 
+            <a onClick={() => {navigate("/individualdnft") 
+            }}>          Individuals DNFT
+            </a> 
+          </div>
         </div>
+        </div>
+        
         <div className="navbutton" onClick={() => navigate("/verify")}>
           Verify
         </div>
