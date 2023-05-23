@@ -193,7 +193,7 @@ const Body = () => {
                             Zero downtime
                             </h1>
                             <p className="text-white mt-3 md:text-lg text-sm text-center md:text-left">
-                            Protection of your keys through encryption
+                            Web3 and blockchain are driving the era of zero downtime, revolutionizing digital systems with uninterrupted and secure operations.
                             </p>
                         </div>
                     </motion.div>

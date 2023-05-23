@@ -28,6 +28,16 @@
   flex-wrap: wrap;
 }
 
+.socialmedia {
+  width: 45px;
+  padding: 5px;
+  height: 250px;
+  border: 1px;
+  border-radius: 10px;
+  background-color: rgb(119, 6, 218);
+  position: relative;
+  top: 10vw;
+}
 .aboutsection .illustration {
   height: 500px;
   width: 450px;
@@ -79,6 +89,8 @@
 .aboutsection .secondheading {
   font-size: 1.5rem;
   font-weight: 10;
+  /* text-align: right; */
+  margin-left: 13rem;
 }
 .aboutsectionmobile .secondheading {
   text-align: center;

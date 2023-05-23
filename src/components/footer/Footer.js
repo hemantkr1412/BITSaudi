@@ -37,6 +37,10 @@ const Footer = () => {
             />
             <img
               src={instagramlogo}
+              style={{
+                height: "46px",
+                width: "47px",
+              }}
               alt=""
               onClick={() => {
                 window.open("https://www.instagram.com/bitindiaofficial/");
@@ -45,8 +49,8 @@ const Footer = () => {
                     <img
           src={Twitterlogo}
           alt=""
-          height="90"
-          width="90"
+          height="70"
+          width="70"
           onClick={() => {
             window.open("https://twitter.com/Bit_Memoir");
           }}
@@ -54,8 +58,8 @@ const Footer = () => {
         <img
           src={Telegram}
           alt=""
-          height="100"
-          width="100"
+          height="80"
+          width="80"
           onClick={() => {
             window.open("https://t.me/bitmemoirofficial");
           }}

@@ -5,8 +5,8 @@ export const Roadmap = () => {
     <div className='roadmappage'>
         <div className='heading'>BITMEMOIR ROADMAP 2023</div>
         <div className='qbox'> 
-            <div className='card'>
-                <div className='container'>
+            <div className='cardroadmap'>
+                <div className='containerroadmap'>
                     <div className='headingq'>2023 Quarter 2</div>
                     <ul className='listq'>
                         <li>Community Building</li>
@@ -17,8 +17,8 @@ export const Roadmap = () => {
                     </ul>
                 </div>
             </div>
-            <div className='card'>
-                <div className='container'>
+            <div className='cardroadmap'>
+                <div className='containerroadmap'>
                 <div className='headingq'>2023 Quarter 3</div>
                 <ul className='listq'>
                     <li>BitMemoir Token IDO Launch on Arbitrum</li>
@@ -30,8 +30,8 @@ export const Roadmap = () => {
                 </ul>
                 </div>
             </div>
-            <div className='card'>
-                <div className='container'>
+            <div className='cardroadmap'>
+                <div className='containerroadmap'>
                 <div className='headingq'>2023 Quarter 4</div>
                 <ul className='listq' >
                     <li>Marketing</li>

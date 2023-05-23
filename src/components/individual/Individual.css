@@ -23,7 +23,10 @@ label {
   width: 100%;
   margin: 20px 0px 10px 0px;
 }
-
+#description{
+  color: black;
+  background-color: var(--secondary);
+}
 .fileselector {
   width: 100%;
   background-color: var(--secondary);

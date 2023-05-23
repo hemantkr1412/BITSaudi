@@ -24,6 +24,11 @@ import QuestionBox from "./QuestionBox";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import Insta from "./assets/instagramlogo.svg";
+import twitter from "./assets/twitter-square-color-icon.svg";
+import Linkidein from "./assets/linkedinlogo.svg";
+import telegram from "./assets/telegram-icon.svg";
+import { Segment } from "semantic-ui-react";
 
 function TabPanel(props) {
   const { value } = props;
@@ -96,11 +101,70 @@ const Home = () => {
     <>
       {/* About Section ------------------- */}
       <div className="aboutSectionContainer">
+      <Segment
+          floated="left"
+          style={{
+            position: "fixed",
+            left: "0px",
+            bottom: "50%",
+            zIndex: "1000",
+          }}
+        >
+          <div className="socialmedia">
+            <a
+              href="https://www.instagram.com/bitmemoir/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={Insta}
+                alt="FAQLogo"
+                style={{ width: "50px", height: "50px" }}
+              />
+            </a>
+            <hr />
+            <a
+              href="https://twitter.com/Bit_Memoir"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={twitter}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+            <hr />
+            <a
+              href="https://www.linkedin.com/company/bitmemoir/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={Linkidein}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+            <hr />
+            <a
+              href="https://t.me/bitmemoirofficial"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={telegram}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+          </div>
+        </Segment>
         <div className="aboutsection">
           <div className="writing">
             <div className="mainheading">BitMemoir</div>
             <div className="secondheading">
-              All digital records and memories over Blockchain
+              Issue. Store. Verify. Retrieve.
             </div>
             <button
               onClick={() => {
@@ -123,7 +187,7 @@ const Home = () => {
           <div className="writing">
             <div className="mainheading">BitMemoir</div>
             <div className="secondheading">
-              All digital records and memories over Blockchain
+              Issue. Store. Verify. Retrieve.
             </div>
             <button
               onClick={() => {
@@ -158,7 +222,7 @@ const Home = () => {
         </div>
       </div>
       {/* Certificates Section------------------------ */}
-      <div className="certificatesectioncontainer">
+      {/* <div className="certificatesectioncontainer">
         <div className="certificatesissued">
           <div className="heading1">Total number of</div>
           <div className="heading2">Certificates Issued: </div>
@@ -169,7 +233,7 @@ const Home = () => {
           <div className="heading2">Souvenirs Issued:</div>
           <div className="heading3">{souvenirs}</div>
         </div>
-      </div>
+      </div> */}
       {/* How to use Section--------------------- */}
       <div className="howtousecontainer">
         <div className="howtouseheading">How to use BitMemoir</div>

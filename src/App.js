@@ -27,12 +27,23 @@ import Body from "./components/BitWallet/Components/body/body";
 import { Partners } from "./components/about/Partner";
 import DNFTLandingPage from "./components/dNFT/landingPage/landing";
 import IndividualLandingPage from "./components/dNFT/landingPage/IndividualLandingPage";
+import Blogpage from "./components/Blog/Blogpage";
+import BlogpageAdmin from "./components/Adminblog/AdminBlog";
+import Blog from "./components/Blog/Blog";
+import EditBlog from "./components/Adminblog/EditBlog";
+import Adminlogin from "./components/Adminblog/Adminlogin";
+import AdminUpload2 from "./components/Adminblog/AdminUpload2";
+import Protected from "./ProtectedRouter";
 // context
 import UserState from "./context/userContext/userState";
 
 // router
 import { Route, Routes } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
+import { NFTLoyalty } from "./components/NFT-Loyalty/NFTLoyalty";
+import { IssueNFT } from "./components/NFT-Loyalty/IssueNFT";
+import { Viewnft } from "./components/NFT-Loyalty/Viewnft";
+import { Updatenft } from "./components/NFT-Loyalty/updatenft";
 function App() {
   return (
     <>
@@ -75,6 +86,18 @@ function App() {
             <Route path="/partners" element={<Partners/>} />
             <Route path="/dnft" element={<DNFTLandingPage />} />
             <Route path="/individualdnft" element={<IndividualLandingPage />} />
+            <Route path="/blogs" element={<Blogpage />} />
+            <Route path="/blogs/:id" element={<Blog />} />
+            <Route path="/blog/adminlogin" element={<Adminlogin />} />
+            <Route path="/blog/adminUpload" element={<Protected><AdminUpload2 /></Protected>} />
+            {/* <Route path="/individualdnft" element={<IndividualLandingPage />} /> */}
+            <Route path="/blog/admin" element={<Protected><BlogpageAdmin /></Protected>} />
+            <Route path="/editblog/:id" element={<Protected><EditBlog /></Protected>} />
+            <Route path="/nftlayalty" element={<NFTLoyalty />} />
+            <Route path="/issuenft" element={<IssueNFT />} />
+            <Route path="/viewnft" element={<Viewnft />} />
+            <Route path="/updatenft" element={<Updatenft />} />
+
           </Routes>
           <Footer />
         </UserState>

@@ -18,8 +18,8 @@
     justify-content: space-around;
     
 }
-.card {
-    /* Add shadows to create the "card" effect */
+.cardroadmap {
+    /* Add shadows to create the "cardroadmap" effect */
     box-shadow: 0 4px 8px 0 rgba(26, 26, 26, 0.69);
     background-image: url(./bb2.png);
     transition: 0.5s;
@@ -32,12 +32,12 @@
   }
   
   /* On mouse-over, add a deeper shadow */
-  .card:hover {
+  .cardroadmap:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-  /* Add some padding inside the card container */
-  .container {
+  /* Add some padding inside the cardroadmap containerroadmap */
+  .containerroadmaproadmap {
     padding: 2px 16px;
   }
   .headingq{

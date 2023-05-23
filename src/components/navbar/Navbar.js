@@ -151,7 +151,7 @@ const Navbar = () => {
               <a  onClick={() => { 
                 navigate("/individual")
                 // setaboutustext("Team")
-              } }>Individuals</a>
+              } }>Individual</a>
               <a onClick={() => {navigate("/institution") 
             }}>          Sectors
             </a> 
@@ -173,11 +173,14 @@ const Navbar = () => {
                 // setaboutustext("Team")
               } }>Souvenirs</a>
               <a onClick={() => {navigate("/dnft") 
-            }}>          Batch DNFT
+            }}>          Batch dNFT
             </a> 
             <a onClick={() => {navigate("/individualdnft") 
-            }}>          Individuals DNFT
+            }}>          Individual dNFT
             </a> 
+            <a onClick={() => {navigate("/nftlayalty")
+            }}>          Loyalty dNFT
+            </a>
           </div>
         </div>
         </div>
@@ -191,7 +194,7 @@ const Navbar = () => {
         {/* <div className="navbutton" onClick={() => navigate("/partners")}>
         Partners
         </div> */}
-        <div className="navbutton" >
+        {/* <div className="navbutton" >
           <div class="dropdown">
             <Button class="dropbtn">{aboutustext}</Button>
             <div class="dropdown-content">
@@ -212,7 +215,7 @@ const Navbar = () => {
             }}>Partners</a>
           </div>
         </div>
-        </div>
+        </div> */}
       </div>
       <div className="menucontainer">
         <img
@@ -232,8 +235,37 @@ const Navbar = () => {
         />
       </div> */}
       <div className="navrightbuttoncontainer">
-        <div className="contactusbutton">
+        {/* <div className="contactusbutton">
           <button onClick={() => navigate("/contact")}>Contact Us</button>
+        </div> */}
+        <div className="contactusbutton">
+          <div className="dropdown">
+            <button className="">About Us</button>
+            <div class="dropdown-content3"> 
+            <a  onClick={() => { 
+                navigate("/team")
+                // setaboutustext("Team")
+              } }>Team</a>
+              <a onClick={() => {navigate("/blogs")}
+            }>Blog</a>
+              <a onClick={() => {navigate("/roadmap") 
+            }}>RoadMap</a>
+              <a onClick={() => {navigate("/whitepapper") 
+              // setaboutustext("WhitePaper")
+            }}>WhitePaper </a>
+              <a onClick={() => {navigate("/tokenomics")
+              // setaboutustext("Tokenomics")
+            }}>Tokenomics</a>
+              <a onClick={() => {navigate("/partners")
+              // setaboutustext("Partners")
+            }}>Partners</a>
+              <a
+                onClick={() => {
+                  navigate("/contact")
+                }}
+              >Contact Us</a>
+            </div>
+          </div>
         </div>
         {user.iswalletAvailable ? (
           user.isConnected ? (
