@@ -117,6 +117,7 @@ export const Viewnft = () => {
             <button onClick={handleOnclick}>View NFT</button>
             <p style={{textAlign:"center"}}>{status}</p>
             </div>
+            <div style={{ display:"flex",width:"80%",flexDirection:"row",justifyContent:"space-around",flexWrap:"wrap"}}className='card-container'>
             {card && 
                 NFTs.map((NFT,index) => { 
                 console.log(NFT)
@@ -130,7 +131,7 @@ export const Viewnft = () => {
                                 <h4>{NFT.metadata.name}</h4>
                                 <p>Token Id :<span>{NFT.token_id}</span></p>
                                 <p>Membership:<br /><span>{NFT.metadata.membership}</span></p>
-                                <p>Membership Expiry Date: <br /><span>{NFT.metadata.expiry_date_memberShip}</span></p>
+                                {NFT.metadata.expiry_date_memberShip ==="" ? <></> : <p>Membership Expiry Date: <br /><span> {NFT.metadata.expiry_date_memberShip}</span></p> }
                                 <p>Issue Date: <span>{NFT.metadata.issue_date_nft}</span></p>
 
                             </div>
@@ -147,7 +148,7 @@ export const Viewnft = () => {
                                     <th>Expiry Date</th>
                                 </tr>
                             
-                                {(NFT.metadata.rewards).map((reward,index) => {
+                                {NFT.metadata.rewards && (NFT.metadata.rewards).map((reward,index) => {
                                 return(<tr>
                                     <td>{reward.issue_date_reward}</td>
                                     <td>{reward.reward}</td>
@@ -159,6 +160,7 @@ export const Viewnft = () => {
                         </div>
                     </div>
                 </div>)})}
+            </div>
         </div>
     </div>
   )

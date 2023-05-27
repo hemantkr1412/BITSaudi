@@ -29,46 +29,42 @@ export default function QuestionBox(props) {
 
 const variableOptions2 = [
   {
-    question:"What is BitMemoir Latam and what services does it offer?",
-    answer:"BitMemoir Latam is a subsidiary of the BitMemoir firm, based in Dubai, that facilitates the issuance of blockchain certifications and diplomas for educational institutions, ensuring authenticity, transparency, and security. We offer customized solutions tailored to the specific needs of each organization, including the issuance of micro-credentials, certifications for courses or programs, registration of non-curricular activities, recognitions and awards, proof of participation in events, and systems to provide transparency in scholarship and funding programs."
+    question:"What is BitMemoir?",
+    answer:"BitMemoir is a unique blockchain-based platform focusing primarily on negating the possibility of creating fake credentials or fudging the documents. The aim is to develop and nurture an ecosystem of verified documents and journey mapping an individual’s life."
   },
   {
-    question:"How does blockchain ensure the authenticity of issued certifications?",
-    answer:"BitMemoir Latam verifies and validates the authenticity of educational institutions before allowing them to issue certifications on the blockchain. Additionally, in the case of university degrees or school diplomas, the issuance process includes a second validation key, where a person designated by the institution authorizes the issuance of the certificates."
+    question:"How does BitMemoir work?",
+    answer:"BitMemoir uses blockchain technology to create Non-Fungible Tokens (NFTs) for each certificate issued. These NFTs have a QR code embedded on them, which contain unique information (meta-data) about the certificate, including the issuer, recipient, and timestamp. The certificates can be securely stored in personal digital wallets and easily downloaded and  shared with others for verification purposes."
   },
   {
-    question:"What are the advantages of using blockchain for issuing certifications and diplomas?",
-    answer:"Blockchain-issued certifications and diplomas are easily verifiable and contrasting, ensuring their authenticity and preventing forgery. Additionally, it provides transparency and security to the issuance process and enables an immutable and accessible historical record over time."
+    question:"How can I issue certificates using BitMemoir? ",
+    answer:"To issue certificates using BitMemoir, you need to first connect the platform with a decentralised wallet and complete the KYC process in order to procure a white-labelled account.On obtaining a white-labelled account, you may upload the certificate template, enter the relevant details, and generate the NFT. "
   },
+
   {
-    question:"How can educational institutions start issuing blockchain certifications with BitMemoir Latam?",
-    answer:"To start issuing blockchain certifications with BitMemoir Latam, institutions must follow these steps :",
-    subAnswer: ["A) Choose the plan that best suits their needs.",
-                  "B) Complete the validation steps to corroborate their authenticity.",
-                  "C) BitMemoir verifies the documentation and validates the institution.",
-                  "D) Select the certification model or upload their own diploma template on the platform.",
-                  "E) Complete the forms with the data of the recipients of the certification or diploma.",
-                  "F) In the case of university or school degrees and diplomas, activate the second validation key to authorize the issuance.",
-                  "G) Issue the blockchain certificates and send them to the recipients."
+    question:"What are the benefits of using BitMemoir?",   
+    answer:"BitMemoir offers the following benefits:",
+    subAnswer: ["A)Enhanced security: BitMemoir leverages blockchain technology to ensure that certificates cannot be tampered with or forged.",
+                  "B) Easy verification: Certificates can be easily verified by scanning the QR code or accessing the blockchain record. ",
+                  "C) Portability: Digital certificates can be stored in personal digital wallets and shared with other parties for verification purposes.                  .",
+                  "D) Efficient issuance: BitMemoir streamlines the certificate issuance process, saving time and resources for the users.",
+                  "E) Transparency: The blockchain record provides a transparent and immutable audit trail of document issuance and verification",
                 ]
   },{ 
-    question:"How can recipients of blockchain certifications access and manage their documents?",
-    answer:"Recipients of blockchain certifications can access and manage their documents through the BitMemoir web application or BIT-Wallet. They will receive the document with the integrated QR code and the digital badge in their virtual wallet."
+    question:"How can I verify a certificate issued through BitMemoir?",
+    answer:"To verify a certificate, simply scan the QR code on the certificate or enter the blockchain transaction details i.e. the contact address and the token ID in the Verify tab. The verification process will display the certificate details and confirm its authenticity"
   },{
-    question:"What types of certifications can be issued on the blockchain?",
-    answer:"BitMemoir Latam allows the issuance of various types of certifications on the blockchain, including university or school degrees, micro-credentials, certifications for courses or programs, recognitions and awards, proof of participation in events, and transparency in scholarship and funding programs."
+    question:"Can BitMemoir be integrated with existing systems?",
+    answer:"Yes, BitMemoir provides integration options to seamlessly connect with existing platforms used by your organisation. This allows for automatic data synchronization and streamlined certificate issuance. For such integration requirements, write to us at support@beimagine.tech."
   },{
-    question:"Is it safe to use BitMemoir Latam to issue blockchain certifications?",
-    answer:"Yes, BitMemoir Latam ensures security in the process of issuing blockchain certifications. We verify and validate the authenticity of educational institutions and use blockchain technology to guarantee the authenticity, transparency, and security of the issued documents."
+    question:"Is BitMemoir compatible with different types of documents?    ",
+    answer:"Yes, BitMemoir can be used to issue and verify a wide range of documents, including academic degrees, diplomas, professional certifications, office memo, event certificates, event tickets etc. However, the document must be in the JPEG format.    "
   },{
-    question:"What payment options are available for purchasing certificate packages in BitMemoir Latam?",
-    answer:"BitMemoir Latam offers various payment options for purchasing certificate packages, including Mercado Pago, PayPal, and bank transfer. Institutions can buy packages with a specific number of certificates and start issuing until the purchased quantity is exhausted."
+    question:"Is BitMemoir secure?",
+    answer:"Yes, BitMemoir employs advanced blockchain technology to ensure the security and integrity of documents. The decentralized nature of blockchain makes it highly resistant to hacking or data manipulation"
   },{
-    question:"What is the cost of certificates in BitMemoir Latam?                    ",
-    answer:"The base cost per certificate in BitMemoir Latam is 1 dollar. For university degrees, which require a second security and validation key, the cost is 2 dollars per certificate."
-  },{
-    question:"Can institutions use their own certificate templates, or do they have to use those provided by BitMemoir Latam?", 
-    answer:"Institutions can choose between using the certificate templates provided by BitMemoir Latam on their platform or uploading and designing their own templates. The platform allows for customization and adaptation of templates according to the needs and preferences of each educational institution."
+    question:"Can I share my NFTs on social media platforms or professional networks?                    ",
+    answer:"Yes, with the integration of BitWallet, sharing of NFTs on social media platforms and professional networks becomes fairly easy.     "
   }
 ]
 

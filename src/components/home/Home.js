@@ -9,6 +9,7 @@ import solutionimg3 from "./assets/solutionimg3.png";
 import solutionimg4 from "./assets/solutionimg4.png";
 import solutionimg5 from "./assets/solutionimg5.png";
 import solutionimg6 from "./assets/solutionimg6.png";
+import productSuite from "./assets/productSuite.png";
 import digitalcertimage from "./assets/digitalcertimage.png";
 import bulk from "./assets/bulk.svg";
 import cerifycert from "./assets/cerifycert.svg";
@@ -29,7 +30,7 @@ import twitter from "./assets/twitter-square-color-icon.svg";
 import Linkidein from "./assets/linkedinlogo.svg";
 import telegram from "./assets/telegram-icon.svg";
 import { Segment } from "semantic-ui-react";
-
+import { motion } from 'framer-motion';
 function TabPanel(props) {
   const { value } = props;
   
@@ -97,6 +98,37 @@ const Home = () => {
       setSouvenirs(res.souvenirs);
     });
   };
+  const imageAnimation = {
+    offscreen: { scale:0  ,opacity:0},
+    // offscreen2: { scale: 1 },
+    onscreen: {
+        scale: 1.1,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          stiffness: 260,
+          damping: 50,
+          rotate: 180
+
+        }
+        
+
+    },
+    // onscreen2: {
+    //     scale: 1,
+    //     opacity: 1,
+    //     transition: {
+    //       type: "spring",
+    //       stiffness: 260,
+    //       damping: 50
+    //     },
+    //     animate: {
+    //       rotate: 360, scale: 1
+    //     }
+
+    // }
+    
+  }; 
   return (
     <>
       {/* About Section ------------------- */}
@@ -234,14 +266,27 @@ const Home = () => {
           <div className="heading3">{souvenirs}</div>
         </div>
       </div> */}
+
+
       {/* How to use Section--------------------- */}
       <div className="howtousecontainer">
-        <div className="howtouseheading">How to use BitMemoir</div>
+        <div className="howtouseheading">PRODUCT SUITE</div>
         <div className="howtousesection">
+        
           <div className="howtouseimageright">
-            <img src={howtouseimage1} alt="" />
+          <motion.div
+             variants={imageAnimation}
+             initial={"offscreen"}
+             whileInView={"onscreen"}
+            //  animate={{ rotate: 360, scale: 1 }}
+            //  viewport={{ once: true, amount: 0.3 }}
+            //  transition={{ staggerChildren: 0.5 }}
+          >
+            <img src={productSuite} alt="" />
+            </motion.div>
           </div>
-          <div className="howtousetextleft">
+
+          {/* <div className="howtousetextleft">
             For educational institutions including schools, colleges, and
             universities.
             <button onClick={() => navigate("instituteinfo")}>Know More</button>
@@ -251,10 +296,10 @@ const Home = () => {
               <div className="dot"></div>
             </div>
             <div className="illustrationbottom"></div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="howtousesection">
+        {/* <div className="howtousesection">
           <div className="howtouseillustrationleft">
             <div className="illustrationtop">
               <div className="dot"></div>
@@ -272,8 +317,8 @@ const Home = () => {
           <div className="howtouseimageleft">
             <img src={howtouseimage2} alt="" />
           </div>
-        </div>
-        <div className="howtousesectionmobile">
+        </div> */}
+        {/* <div className="howtousesectionmobile">
           <div className="howtousesection">
             <div className="howtouseillustrationleft">
               <div className="illustrationtop">
@@ -293,9 +338,9 @@ const Home = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="howtousesection">
+        {/* <div className="howtousesection">
           <div className="howtouseimageright">
             <img src={howtouseimage3} alt="" />
           </div>
@@ -311,11 +356,11 @@ const Home = () => {
             </div>
             <div className="illustrationbottom"></div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Solution Sections ---------------------------------------- */}
-      <div className="solutionsectioncontainer">
+      {/* <div className="solutionsectioncontainer">
         <div className="solutionsheading">Our Solutions</div>
         We Empower Individuals, Institutions and Organizations
         <div className="solutionscardscontainer">
@@ -329,7 +374,50 @@ const Home = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
+
+    <div className="demoContainer">
+        <div className="joinContainerHeading">
+          Demo Video
+        </div>
+        {/* <QuestionBox /> */}
+        <div style={{
+          display: "flex",
+          flexWrap: "wrap",
+          width: "100%",
+          justifyContent:"space-around"
+        }}>
+          <div style={{
+            maxWidth: "450px",
+            padding: "20px",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            fontSize: "20px",
+          }}>
+            Introducing BitMemoir's demo video, where the power of web3 technology comes alive. Witness the seamless transformation of personal documents into secure, blockchain-based digital certifications, empowering individuals and organizations to retain ownership and control over their valuable information for generations to come.
+          </div>
+            <Box
+            sx={{
+              width: "90%",
+              maxWidth: "720px",
+              border: "1px solid lightgrey",
+              borderRadius: "20px",
+              padding: "20px",
+              margin: "20px",
+              alignSelf: "center",
+              alignItems: "center",
+              backgroundColor: "#D8E4F7",
+              // backgroundColor: "#D8E4F7",
+            }}
+          >
+            <iframe width="1200px" height="315" src="https://www.youtube.com/embed/WKbHG4K48jU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          </Box>
+    </div>
+    </div>
+
       {/* Digital certificate Section------------------------------ */}
       <div className="digitalcertcontainer">
         <img src={digitalcertimage} alt="Digital certificate" />
@@ -406,12 +494,13 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="joinContainer"> */}
-        {/* <div className="joinContainerHeading">
+
+      <div className="joinContainer">
+        <div className="joinContainerHeading">
           FAQs
-        </div> */}
+        </div>
         {/* <QuestionBox /> */}
-      {/* <Box
+      <Box
       sx={{
         width: "85%",
         maxWidth: "750px",
@@ -438,8 +527,8 @@ const Home = () => {
         // users={props.users}
         // update={props.update}
       ></TabPanel>
-    </Box> */}
-      {/* </div> */}
+    </Box>
+      </div>
     </>
   );
 };

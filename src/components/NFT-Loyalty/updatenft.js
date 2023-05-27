@@ -149,7 +149,7 @@ export const Updatenft = () => {
 
   return (
     <div className="dashboardpage">
-        <div className="dashboardcontainer">
+        <div className="dashboardcontainer" style={{maxWidth:"100%"}}>
             <NFTNavbar />
             <ScanPop dialogOpen={dialogOpen} setDialogOpen={setDialogOpen} setWalletAddress={setWalletAddress}/>
             <div style={{marginTop:"20px"}}>
@@ -187,6 +187,7 @@ export const Updatenft = () => {
             <button onClick={handleOnclick}>View NFT</button>
             <p style={{textAlign:"center"}}>{status}</p>
             </div>
+            <div style={{ display:"flex",width:"60%",justifyContent:"space-around",flexWrap:"wrap"}}className='card-container'>
             {card && 
             NFTs.map((NFT,index) => { 
                 
@@ -201,7 +202,7 @@ export const Updatenft = () => {
                             <p>Token Id :<span>{NFT.token_id}</span></p>
                            <div>
                             <p>Membership:<br /><span>{NFT.metadata.membership}</span></p>
-                            <p>Membership Expiry Date: <br /><span>{NFT.metadata.expiry_date_memberShip}</span></p>
+                            {NFT.metadata.expiry_date_memberShip ==="" ? <></> : <p>Membership Expiry Date: <br /><span> {NFT.metadata.expiry_date_memberShip}</span></p> }
                             <p>Issue Date: <span>{NFT.metadata.issue_date_nft}</span></p>
                             </div>
                             <button className='update-btn' onClick={() => {
@@ -224,7 +225,7 @@ export const Updatenft = () => {
                                 <th>Action</th>
                             </tr>
                            
-                            {(NFT.metadata.rewards).map((reward,i) => {
+                            {NFT.metadata.rewards && (NFT.metadata.rewards).map((reward,i) => {
                             return(<tr>
                                 <td>{reward.issue_date_reward}</td>
                                 <td>{reward.reward}</td>
@@ -239,6 +240,8 @@ export const Updatenft = () => {
                     </div>
                 </div>
             </div>)})}
+          </div>
+           
             {/* {isUpdate &&
             <div className='updateform' ref={messageRef}>
                  <div className="individualformcontainer" id='updateform'>
