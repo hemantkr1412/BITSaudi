@@ -28,6 +28,7 @@
 
 .menucontainer img {
   width: 30px;
+  border-radius: 0px;
 }
 .menucontainer img:hover {
   animation: scaleup 0.5s;

@@ -80,6 +80,15 @@ const Navbar = () => {
         <div
           className="menuitem"
           onClick={() => {
+            navigate("/nftlayalty");
+            setIsMenu(false);
+          }}
+        >
+          NFT Loyalty
+        </div>
+        <div
+          className="menuitem"
+          onClick={() => {
             navigate("/bitwalletpage");
             setIsMenu(false);
           }}

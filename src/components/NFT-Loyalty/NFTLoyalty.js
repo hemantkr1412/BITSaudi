@@ -42,7 +42,7 @@ const NFTNavbar = () => {
     const navigate = useNavigate();
     return (
         <div className="sectionheading">
-        <div className='navbuttoncontainer'>
+        <div className='navbuttoncontainer2'>
             <div className='navbutton' onClick={() => navigate("/issuenft")}>Issue NFT</div>
             <div className='navbutton' onClick={() => navigate("/viewnft")}>View NFT</div>
             <div className='navbutton'onClick={() => navigate("/updatenft")}>Update NFT</div>
