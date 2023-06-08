@@ -44,9 +44,11 @@ import { NFTLoyalty } from "./components/NFT-Loyalty/NFTLoyalty";
 import { IssueNFT } from "./components/NFT-Loyalty/IssueNFT";
 import { Viewnft } from "./components/NFT-Loyalty/Viewnft";
 import { Updatenft } from "./components/NFT-Loyalty/updatenft";
+import GoogleTagManager from './GoogleTagManager';
 function App() {
   return (
     <>
+      <GoogleTagManager />
       <HashRouter>
         <UserState>
           <Navbar />
