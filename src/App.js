@@ -48,9 +48,11 @@ import TryForFree from "./components/tryforfree/tryforfree";
 import Subscription from "./components/institution/instititeAdvanced/subscription/subscription";
 
 
+import GoogleTagManager from './GoogleTagManager';
 function App() {
   return (
     <>
+      <GoogleTagManager />
       <HashRouter>
         <UserState>
           <Navbar />
@@ -82,12 +84,12 @@ function App() {
               element={<VerifyWithDetails />}
             />
             <Route path="/approval/:orderId/:otp" element={<Approval />} />
-            <Route path="/whitepapper" element={<Whitepaper/>} />
+            <Route path="/whitepapper" element={<Whitepaper />} />
             <Route path="/tokenomics" element={<Tokenomics />} />
             <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/team" element={<Team/>} />
-            <Route path="/bitwalletpage" element={<Body/>} />
-            <Route path="/partners" element={<Partners/>} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/bitwalletpage" element={<Body />} />
+            <Route path="/partners" element={<Partners />} />
             <Route path="/dnft" element={<DNFTLandingPage />} />
             <Route path="/individualdnft" element={<IndividualLandingPage />} />
             <Route path="/blogs" element={<Blogpage />} />

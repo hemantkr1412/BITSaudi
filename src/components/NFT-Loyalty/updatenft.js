@@ -262,7 +262,6 @@ export const Updatenft = () => {
                     <option value="PREMIUM">PREMIUM</option>
                 </select>
             
-
                 {membershipLevel==="PREMIUM" && <><label htmlFor="Expiry-date-membership">
                 Expiry Date of Membership
                 </label>
@@ -273,7 +272,6 @@ export const Updatenft = () => {
                 onChange={(e) => setMembershipExpiryDate(e.target.value)}
                 />
                 </>}
-
                 <label htmlFor="reward-yes-no">
                 Reward
                 </label>
@@ -283,7 +281,6 @@ export const Updatenft = () => {
                 </select>
              
                
-
                 {isReward && <><label htmlFor="reward-amount">
                     Reward 
                 </label>
@@ -292,7 +289,6 @@ export const Updatenft = () => {
                 id="reward-amount"
                 placeholder='eg. 10% off'
                 />
-
                 <label htmlFor="expiry-date-reward">
                 Expiry Date of Reward
                 </label>
@@ -301,7 +297,6 @@ export const Updatenft = () => {
                 id="expiry-date-reward"
                 />
                 </>}
-
             
                 <button>Issue NFT</button>
                 </div>
