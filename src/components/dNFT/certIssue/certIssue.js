@@ -10,10 +10,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 import uploadIcon from "./uploadIcon.jpg";
 import QRCode from "react-qr-code";
 import Slider from "@mui/material/Slider";
+import { useNavigate } from "react-router-dom";
 
 const CertIssue = ({ category, setCategory,setIsBatchCreator }) => {
   const user = useContext(UserContext);
   const [certNumber, setCertNumber] = useState(0);
+  const navigate = useNavigate();
   const [uploadedFile, setUploadedFile] = useState(null);
   const [uploadedFileName, setUploadedFileName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -82,6 +84,15 @@ const CertIssue = ({ category, setCategory,setIsBatchCreator }) => {
   };
 
   const uploadFile = () => {
+    if (user.userData.nft_quota === 0) {
+      alert("Please upgrade your plan.");
+      navigate("/subscription");
+      return;
+    }else if (certNumber > parseInt(user.userData.nft_quota)){
+      alert("You have exceeded your quota. Please upgrade your plan.");
+      navigate("/subscription");
+      return;
+    }
     setIsLoading(true);
     setStatus("Issuing certificates...");
     dNFtForStudent({
@@ -126,6 +137,7 @@ const CertIssue = ({ category, setCategory,setIsBatchCreator }) => {
   };
 
   if (isLoading) return <LoadingPage status={status} category={category} setCategory={setCategory} setIsLoading={setIsLoading} setBatchName={setBatchName} setBatchDescription={setBatchDescription} selectImage={selectImage} setUploadedFileName={setUploadedFileName} setIsBatchCreator={setIsBatchCreator}/>;
+  const limitExceeded = certNumber > parseInt(user.userData.nft_quota);
 
   return (
     <div
@@ -160,6 +172,16 @@ const CertIssue = ({ category, setCategory,setIsBatchCreator }) => {
           value={certNumber}
           onChange={(e) => setCertNumber(e.target.value)}
         />
+        {limitExceeded && (
+          <div className="error">
+            Certificate limit exceeded. Current limit={" "}
+            {user.userData.nft_quota}
+            <button onClick={() =>navigate("/subscription")}>
+            Increase Limit
+            </button>
+          </div>
+        )}
+
         <label htmlFor="cert-number-input-for-issue">Upload NFT Image</label>
         <input
           type="file"

@@ -45,6 +45,11 @@ export const IssueNFT = () => {
             alert('Please enter expiry date of reward');
             return;
         }
+        if (user.userData.nft_quota === 0) {
+            alert('You have no NFT quota left. Please subscribe to get more NFT quota');
+            navigate('/subscription');
+            return;
+        }
         
         setStatus('Waiting for transaction to be mined...');
         let ismebsershipLevel = true;

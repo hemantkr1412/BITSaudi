@@ -4,9 +4,11 @@ import UserContext from "../../../../context/userContext/UserContext";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Subscription from "../subscription/subscription";
+import { useNavigate} from "react-router-dom";
 
 const CertIssue = ({ setView, certData, category }) => {
   const user = useContext(UserContext);
+  const navigate = useNavigate()
   const [certNumber, setCertNumber] = useState(0);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [uploadedFileName, setUploadedFileName] = useState("");
@@ -110,14 +112,16 @@ const CertIssue = ({ setView, certData, category }) => {
   console.log(end_date);
   console.log(date>end_date);
 
-  if (parseInt(user.userData.nft_quota) === 0)
+  if (parseInt(user.userData.nft_quota) === 0){
     return <Subscription back={() => setView("education")} />;
+  }
 
-  if (date >end_date)
+  // if (date >end_date)
+  //   return <Subscription back={() => setView("education")} />;
+
+  if (isSubscription){
     return <Subscription back={() => setView("education")} />;
-
-  if (isSubscription)
-    return <Subscription back={() => setIsSubscription(false)} />;
+  }
 
   if (isLoading) return <LoadingPage status={status} setView={setView} />;
 
@@ -191,7 +195,7 @@ const CertIssue = ({ setView, certData, category }) => {
         <button
           onClick={() => {
             if (limitExceeded) {
-              setIsSubscription(true);
+              navigate("/subscription")
               return;
             }
             uploadFile();

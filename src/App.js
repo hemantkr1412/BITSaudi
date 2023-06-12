@@ -44,6 +44,10 @@ import { NFTLoyalty } from "./components/NFT-Loyalty/NFTLoyalty";
 import { IssueNFT } from "./components/NFT-Loyalty/IssueNFT";
 import { Viewnft } from "./components/NFT-Loyalty/Viewnft";
 import { Updatenft } from "./components/NFT-Loyalty/updatenft";
+import TryForFree from "./components/tryforfree/tryforfree";
+import Subscription from "./components/institution/instititeAdvanced/subscription/subscription";
+
+
 function App() {
   return (
     <>
@@ -97,7 +101,8 @@ function App() {
             <Route path="/issuenft" element={<IssueNFT />} />
             <Route path="/viewnft" element={<Viewnft />} />
             <Route path="/updatenft" element={<Updatenft />} />
-
+            <Route path="/tryforfree" element={<TryForFree />} />
+            <Route path="/subscription" element={<Subscription />} />
           </Routes>
           <Footer />
         </UserState>

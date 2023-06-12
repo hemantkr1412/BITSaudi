@@ -2,9 +2,12 @@ import { useState, useContext } from "react";
 import UserContext from "../../context/userContext/UserContext";
 import { nftApi } from "../Scripts/apiCalls";
 import { ethers } from "ethers";
+import { useNavigate } from "react-router-dom";
+import Subscription from "../institution/instititeAdvanced/subscription/subscription";
 
 const SouvenirScript = () => {
   const user = useContext(UserContext);
+  const navigate = useNavigate();
   const [status, setStatus] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -27,9 +30,14 @@ const SouvenirScript = () => {
   };
 
   const submitHandler = () => {
+    console.log("submitHandler");
     setStatus("");
     if (!checkForEmptyData()) return;
     else if (!checkForFileSize()) return;
+    if (parseInt(user.userData.nft_quota) === 0){
+      navigate("/subscription");
+      return;
+    }
     else {
       uploadImage();
     }

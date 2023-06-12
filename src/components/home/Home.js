@@ -198,15 +198,25 @@ const Home = () => {
             <div className="secondheading">
               Issue. Store. Verify. Retrieve.
             </div>
+            <div style={{ display: "flex", gap: "10px" }}>
             <button
-              onClick={() => {
-                let toScrollElement =
-                  document.getElementById("whatisbitmemoir");
-                toScrollElement.scrollIntoView();
-              }}
-            >
-              Learn More
-            </button>
+                  style={{ background: "white", color: "var(--primary)" }}
+                  onClick={() => {
+                    navigate("/tryforfree");
+                  }}
+                >
+                  Try for free 
+                </button>
+              <button
+                onClick={() => {
+                  let toScrollElement =
+                    document.getElementById("whatisbitmemoir");
+                  toScrollElement.scrollIntoView();
+                }}
+              >
+                Learn More
+              </button>
+            </div>
           </div>
           <div className="illustration">
             <img src={img1} alt="" />
@@ -221,15 +231,25 @@ const Home = () => {
             <div className="secondheading">
               Issue. Store. Verify. Retrieve.
             </div>
-            <button
-              onClick={() => {
-                let toScrollElement =
-                  document.getElementById("whatisbitmemoir");
-                toScrollElement.scrollIntoView();
-              }}
-            >
-              Learn More
-            </button>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <button
+                  style={{ background: "white", color: "var(--primary)" }}
+                  onClick={() => {
+                    navigate("/tryforfree");
+                  }}
+                >
+                  Try for free {">"}
+                </button>
+              <button
+                onClick={() => {
+                  let toScrollElement =
+                    document.getElementById("whatisbitmemoir");
+                  toScrollElement.scrollIntoView();
+                }}
+              >
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
         <div className="nextpagearrowcontainer">

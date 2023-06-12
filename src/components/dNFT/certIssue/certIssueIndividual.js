@@ -10,7 +10,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import uploadIcon from "./uploadIcon.jpg";
 import QRCode from "react-qr-code";
 import Slider from "@mui/material/Slider";
-
+import { useNavigate } from "react-router-dom";
 const CertIssueIndividual = ({ category, setCategory, setIsBatchCreator}) => {
   const user = useContext(UserContext);
   const [certNumber, setCertNumber] = useState(0);
@@ -28,6 +28,7 @@ const CertIssueIndividual = ({ category, setCategory, setIsBatchCreator}) => {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [qrXPos, setQrXPos] = useState(10);
   const [qrYPos, setQrYPos] = useState(10);
+  const navigate = useNavigate();
 
   
 
@@ -82,6 +83,11 @@ const CertIssueIndividual = ({ category, setCategory, setIsBatchCreator}) => {
   };
 
   const uploadFile = () => {
+    if (user.userData.nft_quota === 0) {
+      alert("Please upgrade your plan.");
+      navigate("/subscription");
+      return;
+    }
     setIsLoading(true);
     setStatus("Issuing certificates...");
     dNFtForStudent({
