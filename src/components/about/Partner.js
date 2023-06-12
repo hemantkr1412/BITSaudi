@@ -1,32 +1,24 @@
 import React from 'react'
-import image1 from "./Assets/1.webp"
-import image2 from "./Assets/2.webp"
-import image3 from "./Assets/3.webp"
-import image4 from "./Assets/4.webp"
-import image5 from "./Assets/5.webp"
-import image6 from "./Assets/6.webp"
-import image7 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_52 PM (1).webp"
-import image8 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_52 PM.webp"
-import image9 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_53 PM.webp"
-import image10 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_54 PM.webp"
-import image11 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_56 PM.webp"
-import image12 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_57 PM (1).webp"
-import image13 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_57 PM.webp"
-import image14 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_58 PM (1).webp"
-import image15 from "./Assets/WhatsApp Image 2022-12-16 at 2_38_58 PM.webp"
-import image16 from "./Assets/champ_header_logo.png"
-import image17 from "./Assets/descarga.png"
-import image18 from "./Assets/IITAllahabad.jpg"
-import image19 from "./Assets/Indian_Railway_Logo_1.png"
-import image20 from "./Assets/Logo_of_Summit_Hotels_and_Resorts_in_India_wvc7qg.png"
-import image21 from "./Assets/logo.png"
-import image22 from "./Assets/QuillAudit-Icon.webp"
+import mount_hotels from "./Assets/bg_less_images/mount_hotels.png"
+import mayfair from "./Assets/bg_less_images/mayfair.png"
+import waxpol from "./Assets/bg_less_images/waxpol.png"
+import young_indians from "./Assets/bg_less_images/young_indians.png"
+import army from "./Assets/bg_less_images/army.png"
+import blockchain_productivity from "./Assets/bg_less_images/blockchain_productivity.png"
+import entrepreneurs from "./Assets/bg_less_images/entrepreneurs.png"
+import metamorphosis from "./Assets/bg_less_images/metamorphosis.png"
+import round_table_india from "./Assets/bg_less_images/round_table_india.png"
+import champagnat from "./Assets/bg_less_images/champagnat.png"
+import aualcpi from "./Assets/bg_less_images/aualcpi.png"
+import iiit from "./Assets/bg_less_images/iiit.png"
+import indian_railway from "./Assets/indian_railway.png"
+import summit from "./Assets/bg_less_images/summit.png"
+import purvanchal from "./Assets/bg_less_images/purvanchal.png"
+import QuillAudits from "./Assets/bg_less_images/QuillAudits.png"
 import { motion } from 'framer-motion';
-
-
 import './Partner.css'
+
 export const Partners = () => {
-    
     const imageAnimation = {
         offscreen: { x: 100 },
         offscreen2: { x: 0 },
@@ -38,7 +30,6 @@ export const Partners = () => {
                 bounce: 0.4,
                 duration: 2
             }
-
         },
         onscreen2: {
             x: 100,
@@ -48,196 +39,207 @@ export const Partners = () => {
                 bounce: 0.4,
                 duration: 2
             }
-
         }
     };
-  return (
-    <div className='roadmappage'>
-        <div className='heading'>Partners</div>
-        
-        <div className='qbox'>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image1} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image4} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image6} alt="Avatar" style={{width:"200px",height:"200px",}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image7} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image8} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image9} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
 
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image10} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image11} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image12} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-        
-            <div class="card2">
-                <img src={image16} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image17} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image18} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image19} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image20} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image21} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-        <motion.div
-                        variants={imageAnimation}
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ staggerChildren: 0.5 }}
-                        >
-            <div class="card2">
-                <img src={image22} alt="Avatar" style={{width:"200px",height:"200px"}} />
-            </div>
-        </motion.div>
-          
-        </div>
-        {/* </motion.div> */}
-        
-    </div>
-  )
+    return (
+        <div className='roadmappage'>
+            <div className='heading'>Partners</div>
+
+            <div className='qbox'>
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={mount_hotels} alt="Avatar" style={{ width: "175px", height: "175px", filter: 'invert(100%)' }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={mayfair} alt="Avatar" style={{ width: "200px", height: "200px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={waxpol} alt="Avatar" style={{ width: "200px", height: "200px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={young_indians} alt="Avatar" style={{ width: "200px", height: "200px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={army} alt="Avatar" style={{ width: "180px", height: "180px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2" style={{ padding: '5px' }}>
+                        <img src={blockchain_productivity} alt="Avatar" style={{ width: "195px", height: "180px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={entrepreneurs} alt="Avatar" style={{ width: "200px", height: "200px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={metamorphosis} alt="Avatar" style={{ width: "200px", height: "200px", filter: 'invert(100%)' }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={round_table_india} alt="Avatar" style={{ width: "185px", height: "185px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+
+                    <div class="card2">
+                        <img src={champagnat} alt="Avatar" style={{ width: "200px", height: "200px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={aualcpi} alt="Avatar" style={{ width: "200px", height: "200px", aspectRatio: '3/2', objectFit: 'contain' }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={iiit} alt="Avatar" style={{ width: "180px", height: "180px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={indian_railway} alt="Avatar" style={{ width: "170px", height: "170px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={summit} alt="Avatar" style={{ width: "200px", height: "200px", filter: 'invert(100%)' }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={purvanchal} alt="Avatar" style={{ width: "190px", height: "190px" }} />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={imageAnimation}
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ staggerChildren: 0.5 }}
+                >
+                    <div class="card2">
+                        <img src={QuillAudits} alt="Avatar" style={{ width: "200px", height: "200px", filter: 'invert(100%)' }} />
+                    </div>
+                </motion.div>
+            </div >
+        </div >
+    )
 }

@@ -10,6 +10,7 @@ export const userApi = async (data) => {
     formData.append(item, data[item]);
     return null;
   });
+
   const response = await fetch(url, { method: "POST", body: formData })
     .then((res) => {
       console.log(res);
@@ -25,6 +26,7 @@ export const userApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const nftApi = async (data) => {
   const endpoint = "nft";
   const url = BASE_URL + endpoint;
@@ -45,6 +47,7 @@ export const nftApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const kpiApi = async (data) => {
   const endpoint = "kpi";
   const url = BASE_URL + endpoint;
@@ -60,6 +63,7 @@ export const kpiApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const adminApi = async (data) => {
   const endpoint = "admin";
   const url = BASE_URL + endpoint;
@@ -80,6 +84,7 @@ export const adminApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const verifyApi = async (data) => {
   const endpoint = "verify";
   const url = BASE_URL + endpoint;
@@ -100,6 +105,7 @@ export const verifyApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const templateApi = async (data) => {
   const endpoint = "certificate";
   const url = BASE_URL + endpoint;
@@ -119,6 +125,7 @@ export const templateApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const issueApi = async (data) => {
   const endpoint = "issue";
   const url = BASE_URL + endpoint;
@@ -138,6 +145,7 @@ export const issueApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const approvalApi = async (data) => {
   const endpoint = "approval";
   const url = BASE_URL + endpoint;
@@ -157,6 +165,7 @@ export const approvalApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const paymentApi = async (data) => {
   const endpoint = "payment";
   const url = BASE_URL + endpoint;
@@ -176,6 +185,7 @@ export const paymentApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
+
 export const nonEssenCertissueApi = async (data) => {
   const endpoint = "nonEssCert";
   const url = BASE_URL + endpoint;
@@ -195,7 +205,6 @@ export const nonEssenCertissueApi = async (data) => {
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
 };
-
 
 export const SubsForDev = async (data) => {
   const endpoint = "subForDev";
@@ -257,7 +266,7 @@ export const issueNftreward = async (data) => {
   if (response.status !== "Success")
     throw Object.assign(new Error("Server error"), { code: 402 });
 
-  if (data.request_type === "view_reward"){
+  if (data.request_type === "view_reward") {
     return response.response;
   }
   return response.status;

@@ -18,6 +18,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .aboutsectionmobile {
   display: none;
   width: 100%;
@@ -38,6 +39,7 @@
   position: relative;
   top: 10vw;
 }
+
 .aboutsection .illustration {
   height: 500px;
   width: 450px;
@@ -45,6 +47,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .aboutsectionmobile .illustration {
   width: 80vw;
   display: flex;
@@ -56,6 +59,7 @@
   height: 100%;
   width: 450px;
 }
+
 .aboutsectionmobile .illustration img {
   height: 100%;
   width: 80vw;
@@ -67,6 +71,7 @@
   align-items: flex-start;
   justify-content: left;
 }
+
 .aboutsectionmobile .writing {
   display: flex;
   flex-direction: column;
@@ -82,16 +87,19 @@
   font-family: coolvetica;
   font-size: 7.5rem;
 }
+
 .aboutsectionmobile .mainheading {
   font-family: coolvetica;
   font-size: 3.5rem;
 }
+
 .aboutsection .secondheading {
   font-size: 1.5rem;
   font-weight: 10;
   /* text-align: right; */
   margin-left: 13rem;
 }
+
 .aboutsectionmobile .secondheading {
   text-align: center;
   font-size: 1rem;
@@ -104,6 +112,7 @@
   justify-content: center;
   animation: downemphasis 2s infinite;
 }
+
 .aboutSectionContainer .nextpagearrow {
   width: 21px;
   height: 21px;
@@ -116,6 +125,7 @@
   from {
     transform: translateY(-50%);
   }
+
   to {
     transform: translateY(50%);
   }
@@ -125,24 +135,26 @@
   .aboutsection {
     display: none;
   }
+
   .aboutsectionmobile {
     display: flex;
   }
-  
+
 
 }
 
 /* Description Section */
 
 .descriptionsectioncontainer {
-  min-height: 100vh;
+  /* border: 2px solid red; */
+  min-height: 90vh;
   background-color: var(--secondary);
   background-image: url(./assets/whatisbitbackground.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left center;
   color: var(--tertiary);
-  padding: 100px;
+  padding: 65px 10px;
 }
 
 .descriptionsection {
@@ -151,13 +163,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 500px;
+  /* max-width: 500px; */
   text-align: left;
   line-height: 25px;
 }
+
+.descriptionDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.descriptionDiv #intro {
+  /* border: 2px solid red; */
+  width: 35%;
+  text-align: justify;
+  padding: 4rem;
+}
+
+.descriptionDiv #intro h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.descriptionDiv #intro p {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
 @media only screen and (max-width: 600px) {
   .descriptionsection {
     text-align: center;
+  }
+
+  #videoDiv {
+    height: 17rem;
+    width: 68%;
+  }
+
+  .descriptionDiv #intro {
+    width: 70%;
+    padding: 0;
   }
 }
 
@@ -168,6 +215,17 @@
   margin: 40px 0px;
   border-bottom: 1px solid var(--primary);
   font-family: coolvetica;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  #videoDiv {
+    width: 68%;
+  }
+
+  .descriptionDiv #intro {
+    width: 70%;
+    padding: 0;
+  }
 }
 
 /* Certificates section */
@@ -206,6 +264,7 @@
   font-size: large;
   font-weight: 800;
 }
+
 .certificatesissued .heading3 {
   font-size: 100px;
   font-weight: 600;
@@ -224,7 +283,7 @@
 
 .howtouseheading {
   font-size: 2rem;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-align: center;
   font-family: coolvetica;
 }
@@ -245,7 +304,9 @@
   height: 20vw;
   width: 20vw;
   border-radius: 20px;
+
 }
+
 .howtousesection button {
   margin: 20px 0px;
 }
@@ -256,12 +317,46 @@
   justify-content: center;
 }
 
+/* CARDS CSS */
+
+.cardsDiv {
+  border: 2px solid red;
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: var(--secondary);
+  border: none;
+  border-radius: 10px;
+}
+
+.cards {
+  background-color: var(--primary) !important;
+  flex: 1;
+  height: 80%;
+}
+
+/* .cards:hover {
+  animation: scaleup 0.5s;
+  transform: scale(1.1);
+} */
+
+.cardTitle {
+  color: var(--secondary);
+  font-size: 500;
+}
+
+.cardDesc {
+  color: #dfb7ff;
+}
+
 .howtousetextleft {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
+
 .howtouseillustrationright {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -271,6 +366,7 @@
   border-bottom: 3px solid var(--secondary);
   position: relative;
 }
+
 .howtouseillustrationright .illustrationtop .dot {
   position: absolute;
   bottom: -7px;
@@ -296,6 +392,7 @@
   align-items: flex-end;
   text-align: right;
 }
+
 .howtouseillustrationleft {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -305,6 +402,7 @@
   border-bottom: 3px solid var(--secondary);
   position: relative;
 }
+
 .howtouseillustrationleft .illustrationtop .dot {
   position: absolute;
   bottom: -7px;
@@ -320,42 +418,147 @@
   .howtouseillustrationleft {
     display: none;
   }
+
   .howtouseillustrationright {
     display: none;
   }
+
   .howtousesectionmobile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .howtousesection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+
   .howtousesection img {
     height: 80vw;
     width: 80vw;
     border-radius: 20px;
   }
+
   .howtousetextleft {
     padding: 20px;
     align-items: center;
     text-align: center;
   }
+
   .howtousetextright {
     display: none;
   }
+
   .howtouseimageleft {
     display: none;
   }
+
   .howtouseimageright {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+}
+
+/* USE CASES SECTION */
+
+.useCasesDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.useCasesHead {
+  color: var(--primary);
+  font-size: 2rem;
+  /* text-decoration: underline; */
+  text-align: center;
+  font-family: coolvetica;
+  margin-bottom: 3rem;
+}
+
+.flip-card {
+  height: 12rem;
+  width: 11rem;
+  margin: 0rem;
+  margin: 2rem 0rem;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  /* border: 2px solid red; */
+  flex-direction: column;
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+  background-color: var(--secondary);
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: 12px;
+  border-radius: 2rem;
+  border-radius: 50%;
+  /* box-shadow: 3px 3px 8px rgb(204, 203, 203), -3px -3px 8px rgb(204, 203, 203); */
+  transform: rotateY(180deg);
+  overflow: hidden;
+}
+
+.flip-card-back::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.flip-card-back ul {
+  margin-left: -1rem;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.flip-card-back ul li {
+  margin-right: 2px;
+}
+
+.imgDiv {
+  height: 9rem;
+  width: 9rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgDiv img {
+  height: 6rem;
+  filter: invert(1);
 }
 
 /* Solutions Section */
@@ -414,6 +617,7 @@
   .solutionscard {
     width: 250px;
   }
+
   .solutionscard img {
     width: 250px;
   }
@@ -428,53 +632,12 @@
   padding: 10px;
 }
 
-/* Digital Certificate */
-.digitalcertcontainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.digitalcertcontainer img {
-  width: 50vw;
-  min-width: 300px;
-}
-
-.digitalcerttext {
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
-  max-width: 500px;
-  text-align: right;
-  line-height: 25px;
-}
-.digitalcerttext .heading {
-  font-size: 1.5rem;
-  color: var(--primary);
-  font-family: coolvetica;
-  padding: 20px;
-}
-@media only screen and (max-width: 600px) {
-  .digitalcertcontainer {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .digitalcertcontainer img {
-    width: 80vw;
-  }
-  .digitalcerttext {
-    width: 80vw;
-    text-align: center;
-  }
-}
-
 /* Benefits Section--------------- */
+
 .whybitcontainer {
   display: flex;
   flex-direction: column;
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
   background-image: url(./assets/whybitbackground.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -487,9 +650,9 @@
 
 .whybitcontainer .heading {
   color: var(--primary);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: coolvetica;
-  padding: 20px;
+  margin-bottom: 2rem;
 }
 
 .benefitscontainer {
@@ -519,6 +682,7 @@
   grid-template-columns: 1fr 1fr;
   height: 50px;
 }
+
 .joinContainer {
   background-color: var(--secondary);
   color: var(--primary);
@@ -526,23 +690,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 100px 0px;
+  padding: 0 0 100px 0px;
   max-width: 1950px;
 }
-.demoContainer {
-  background-color: var(--primary);
-  color: var(--secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px 0px;
-  max-width: 1950px;
-}
+
 .joinContainerHeading {
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 
@@ -550,19 +706,18 @@
   .benefit {
     width: 300px;
   }
+
   .benefitdivider {
     width: 300px;
   }
+
   .joinContainerHeading {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
   }
-  .joinContainer{
-    margin-top: 200px;
 
-  }
-  .demoContainer{
+  .joinContainer {
     margin-top: 200px;
 
   }
@@ -571,10 +726,12 @@
 .benefitdivider .dividerright {
   border-left: 2px dashed var(--primary);
 }
+
 .benefitdivider .dividerrightwithdot {
   border-left: 2px dashed var(--primary);
   position: relative;
 }
+
 .benefitdivider .dividerrightwithdot .dot {
   position: absolute;
   bottom: -7px;
@@ -584,7 +741,6 @@
   border: 1px solid var(--primary);
   border-radius: 10px;
   background-color: var(--primary);
-
   animation: blink 0.8s infinite;
 }
 
@@ -594,11 +750,15 @@
   from {
     box-shadow: 0px 0px 1px 1px var(--tertiary);
   }
+
   to {
     box-shadow: 0px 0px 5px 1px var(--tertiary);
   }
 }
 
 .whybitcontainer button {
-  margin: 20px 0px;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
 }
