@@ -86,7 +86,7 @@ function App() {
             <Route path="/approval/:orderId/:otp" element={<Approval />} />
             <Route path="/whitepapper" element={<Whitepaper />} />
             <Route path="/tokenomics" element={<Tokenomics />} />
-            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/roadmap" element={<Whitepaper />} />
             <Route path="/team" element={<Team />} />
             <Route path="/bitwalletpage" element={<Body />} />
             <Route path="/partners" element={<Partners />} />

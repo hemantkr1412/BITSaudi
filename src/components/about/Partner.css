@@ -1,10 +1,11 @@
-.roadmappage {
+.roadmappage{
   background-color: var(--secondary);
   /* background-color: #ebd2ff; */
   min-height: 90vh;
   width: 100%;
   color: var(--secondary);
   padding-top: 40px;
+ 
 }
 
 .heading {
