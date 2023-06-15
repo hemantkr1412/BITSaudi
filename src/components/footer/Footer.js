@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyrightcontainer">
-        Copyright © 2022 Beyond Imagination Technologies Pvt. Ltd. All right
+        Copyright © 2023 Aba’ad Alkhayalal All right
         reserved.
       </div>
     </div>

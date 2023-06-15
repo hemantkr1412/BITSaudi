@@ -93,6 +93,13 @@
   font-size: 3.5rem;
 }
 
+.aboutsection .secondheading1 {
+  font-size: 2rem;
+  font-weight: 700;
+  /* text-align: right; */
+  margin-left: 25rem;
+  font-family: 'DM Serif Display';
+}
 .aboutsection .secondheading {
   font-size: 1.5rem;
   font-weight: 10;

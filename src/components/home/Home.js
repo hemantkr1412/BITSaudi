@@ -192,6 +192,9 @@ const Home = () => {
         <div className="aboutsection">
           <div className="writing">
             <div className="mainheading">BitMemoir</div>
+            <div className="secondheading1">
+              Suadi
+            </div>
             <div className="secondheading">
               Issue. Store. Verify. Retrieve.
             </div>
@@ -228,7 +231,7 @@ const Home = () => {
             <div className="secondheading">
               Issue. Store. Verify. Retrieve.
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div style={{ display: "flex", gap: "10px"}}>
               <button
                   style={{ background: "white", color: "var(--primary)" }}
                   onClick={() => {

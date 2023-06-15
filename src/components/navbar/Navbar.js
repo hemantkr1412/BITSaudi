@@ -141,6 +141,10 @@ const Navbar = () => {
           src={logo}
           alt="BEYOND IMAGINATION TECHNOLOGIES"
           onClick={() => navigate("/home")}
+          style={{
+            width:"150px",
+            height:"80px",
+          }}
         />
       </div>
       <div className="navbuttoncontainer">
@@ -259,19 +263,19 @@ const Navbar = () => {
                 navigate("/team")
                 // setaboutustext("Team")
               }}>Team</a>
-              <a onClick={() => { navigate("/blogs") }
-              }>Blog</a>
-              <a onClick={() => {
+              {/* <a onClick={() => { navigate("/blogs") }
+              }>Blog</a> */}
+              {/* <a onClick={() => {
                 navigate("/roadmap")
-              }}>RoadMap</a>
-              <a onClick={() => {
+              }}>RoadMap</a> */}
+              {/* <a onClick={() => {
                 navigate("/whitepapper")
                 // setaboutustext("WhitePaper")
-              }}>WhitePaper </a>
-              <a onClick={() => {
+              }}>WhitePaper </a> */}
+              {/* <a onClick={() => {
                 navigate("/tokenomics")
                 // setaboutustext("Tokenomics")
-              }}>Tokenomics</a>
+              }}>Tokenomics</a> */}
               <a onClick={() => {
                 navigate("/partners")
                 // setaboutustext("Partners")
