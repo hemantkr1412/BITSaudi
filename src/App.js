@@ -22,9 +22,7 @@ import Approval from "./components/institution/instititeAdvanced/approval/approv
 import { Whitepaper } from "./components/about/whitepaper";
 import { Tokenomics } from "./components/about/Tokenomics";
 import { Roadmap } from "./components/about/Roadmap";
-import { Team } from "./components/about/Team";
 import Body from "./components/BitWallet/Components/body/body";
-import { Partners } from "./components/about/Partner";
 import DNFTLandingPage from "./components/dNFT/landingPage/landing";
 import IndividualLandingPage from "./components/dNFT/landingPage/IndividualLandingPage";
 import Blogpage from "./components/Blog/Blogpage";
@@ -47,70 +45,124 @@ import { Updatenft } from "./components/NFT-Loyalty/updatenft";
 import TryForFree from "./components/tryforfree/tryforfree";
 import Subscription from "./components/institution/instititeAdvanced/subscription/subscription";
 
-
-import GoogleTagManager from './GoogleTagManager';
+import GoogleTagManager from "./GoogleTagManager";
 function App() {
-  return (
-    <>
-      <GoogleTagManager />
-      <HashRouter>
-        <UserState>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/individual" element={<Individual />} />
-            <Route path="/view" element={<View />} />
-            {/* <Route path="/institution" element={<Institution />} /> */}
-            <Route path="/institution" element={<InstitutesLandingPage />} />
-            <Route path="/souvenir" element={<Souvenir />} />
-            {/* <Route path="kycform" element={<KYCform />} /> */}
-            <Route path="/wallet" element={<NoWalletPage />} />
-            <Route path="/connect" element={<Connect />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/home/individualinfo" element={<Individualinfo />} />
-            <Route path="/home/instituteinfo" element={<InstituteInfo />} />
-            <Route path="/home/destinationinfo" element={<DestinationInfo />} />
-            <Route path="/individualinfo" element={<Individualinfo />} />
-            <Route path="/instituteinfo" element={<InstituteInfo />} />
-            <Route path="/destinationinfo" element={<DestinationInfo />} />
-            <Route path="/:page" element={<Home />} />
-            <Route path="/privacypolicy" element={<Privacypolicy />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/verify" element={<Verify />} />
-            <Route
-              path="/verify/:contractAddress/:tokenId"
-              element={<VerifyWithDetails />}
-            />
-            <Route path="/approval/:orderId/:otp" element={<Approval />} />
-            <Route path="/whitepapper" element={<Whitepaper />} />
-            <Route path="/tokenomics" element={<Tokenomics />} />
-            <Route path="/roadmap" element={<Whitepaper />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/bitwalletpage" element={<Body />} />
-            <Route path="/partners" element={<Partners />} />
-            <Route path="/dnft" element={<DNFTLandingPage />} />
-            <Route path="/individualdnft" element={<IndividualLandingPage />} />
-            <Route path="/blogs" element={<Blogpage />} />
-            <Route path="/blogs/:id" element={<Blog />} />
-            <Route path="/blog/adminlogin" element={<Adminlogin />} />
-            <Route path="/blog/adminUpload" element={<Protected><AdminUpload2 /></Protected>} />
-            {/* <Route path="/individualdnft" element={<IndividualLandingPage />} /> */}
-            <Route path="/blog/admin" element={<Protected><BlogpageAdmin /></Protected>} />
-            <Route path="/editblog/:id" element={<Protected><EditBlog /></Protected>} />
-            <Route path="/nftlayalty" element={<NFTLoyalty />} />
-            <Route path="/issuenft" element={<IssueNFT />} />
-            <Route path="/viewnft" element={<Viewnft />} />
-            <Route path="/updatenft" element={<Updatenft />} />
-            <Route path="/tryforfree" element={<TryForFree />} />
-            <Route path="/subscription" element={<Subscription />} />
-          </Routes>
-          <Footer />
-        </UserState>
-      </HashRouter>
-    </>
-  );
+	return (
+		<>
+			<GoogleTagManager />
+			<HashRouter>
+				<UserState>
+					<Navbar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/home" element={<Home />} />
+						<Route path="/individual" element={<Individual />} />
+						<Route path="/view" element={<View />} />
+						{/* <Route path="/institution" element={<Institution />} /> */}
+						<Route
+							path="/institution"
+							element={<InstitutesLandingPage />}
+						/>
+						<Route path="/souvenir" element={<Souvenir />} />
+						{/* <Route path="kycform" element={<KYCform />} /> */}
+						<Route path="/wallet" element={<NoWalletPage />} />
+						<Route path="/connect" element={<Connect />} />
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/admin" element={<Admin />} />
+						<Route
+							path="/home/individualinfo"
+							element={<Individualinfo />}
+						/>
+						<Route
+							path="/home/instituteinfo"
+							element={<InstituteInfo />}
+						/>
+						<Route
+							path="/home/destinationinfo"
+							element={<DestinationInfo />}
+						/>
+						<Route
+							path="/individualinfo"
+							element={<Individualinfo />}
+						/>
+						<Route
+							path="/instituteinfo"
+							element={<InstituteInfo />}
+						/>
+						<Route
+							path="/destinationinfo"
+							element={<DestinationInfo />}
+						/>
+						<Route path="/:page" element={<Home />} />
+						<Route
+							path="/privacypolicy"
+							element={<Privacypolicy />}
+						/>
+						<Route path="/dashboard" element={<Dashboard />} />
+						<Route path="/verify" element={<Verify />} />
+						<Route
+							path="/verify/:contractAddress/:tokenId"
+							element={<VerifyWithDetails />}
+						/>
+						<Route
+							path="/approval/:orderId/:otp"
+							element={<Approval />}
+						/>
+						<Route path="/whitepapper" element={<Whitepaper />} />
+						<Route path="/tokenomics" element={<Tokenomics />} />
+						<Route path="/roadmap" element={<Whitepaper />} />
+						<Route path="/bitwalletpage" element={<Body />} />
+						<Route path="/dnft" element={<DNFTLandingPage />} />
+						<Route
+							path="/individualdnft"
+							element={<IndividualLandingPage />}
+						/>
+						<Route path="/blogs" element={<Blogpage />} />
+						<Route path="/blogs/:id" element={<Blog />} />
+						<Route
+							path="/blog/adminlogin"
+							element={<Adminlogin />}
+						/>
+						<Route
+							path="/blog/adminUpload"
+							element={
+								<Protected>
+									<AdminUpload2 />
+								</Protected>
+							}
+						/>
+						{/* <Route path="/individualdnft" element={<IndividualLandingPage />} /> */}
+						<Route
+							path="/blog/admin"
+							element={
+								<Protected>
+									<BlogpageAdmin />
+								</Protected>
+							}
+						/>
+						<Route
+							path="/editblog/:id"
+							element={
+								<Protected>
+									<EditBlog />
+								</Protected>
+							}
+						/>
+						<Route path="/nftlayalty" element={<NFTLoyalty />} />
+						<Route path="/issuenft" element={<IssueNFT />} />
+						<Route path="/viewnft" element={<Viewnft />} />
+						<Route path="/updatenft" element={<Updatenft />} />
+						<Route path="/tryforfree" element={<TryForFree />} />
+						<Route
+							path="/subscription"
+							element={<Subscription />}
+						/>
+					</Routes>
+					<Footer />
+				</UserState>
+			</HashRouter>
+		</>
+	);
 }
 
 export default App;
