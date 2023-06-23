@@ -4,24 +4,24 @@ import wallet from "./assets/wallet.svg";
 import React from "react";
 import UserContext from "../../context/userContext/UserContext";
 import { useContext, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Connect = () => {
-  const user = useContext(UserContext);
-
-  return (
-    <div className="nowalletpage">
-      <img src={wallet} alt="Wallet" />
-      <h2>Please connect your wallet</h2>
-      This won't cost you any gas.
-      <button
-        onClick={() => {
-          user.login();
-        }}
-      >
-        Connect
-      </button>
-    </div>
-  );
+	const user = useContext(UserContext);
+	const { t } = useTranslation();
+	return (
+		<div className="nowalletpage">
+			<img src={wallet} alt="Wallet" />
+			<h2>{t("connection.connection.heading")}</h2>
+			{t("connection.connection.connect-btn")}
+			<button
+				onClick={() => {
+					user.login();
+				}}>
+				{t("connection.connection.subheading")}
+			</button>
+		</div>
+	);
 };
 
 export default Connect;

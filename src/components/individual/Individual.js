@@ -5,79 +5,89 @@ import Connect from "../connection/Connect";
 import IndividualScript from "./IndividualScript";
 import DND from "../Scripts/draganddrop/DND";
 import NoWalletPage from "../connection/NoWalletPage";
-
+import { useTranslation } from "react-i18next";
 export const Individual = () => {
-  const user = useContext(UserContext);
-  const {
-    status,
-    isUploading,
-    uploadedImageURL,
-    assetName,
-    setAssetName,
-    assetDescription,
-    setAssetDescription,
-    saveImage,
-    submitHandler,
-  } = IndividualScript();
+	const user = useContext(UserContext);
+	const { t } = useTranslation();
+	const {
+		status,
+		isUploading,
+		uploadedImageURL,
+		assetName,
+		setAssetName,
+		assetDescription,
+		setAssetDescription,
+		saveImage,
+		submitHandler,
+	} = IndividualScript();
 
-  if (!user.iswalletAvailable) {
-    return <NoWalletPage />;
-  }
+	if (!user.iswalletAvailable) {
+		return <NoWalletPage />;
+	}
 
-  if (!user.isConnected) {
-    return <Connect />;
-  }
+	if (!user.isConnected) {
+		return <Connect />;
+	}
 
-  return (
-    <div className="individualpage">
-      <div className="individualformcontainer">
-        <h1>Create Your Digital Certificate</h1>
-        {Math.round((user.userData?.storage_used / 1024) * 100) / 100} GB used
-        out of {Math.round((user.userData?.storage_limit / 1024) * 100) / 100}{" "}
-        GB
-        <label htmlFor="fileselectorinput">Upload Image*</label>
-        <input
-          type="file"
-          id="fileselectorinput"
-          style={{ display: "none" }}
-          onChange={(e) => {
-            saveImage(e.target.files[0]);
-          }}
-        />
-        <DND uploadedImageURL={uploadedImageURL} saveImage={saveImage} />
-        <label htmlFor="assetname">Asset Name*</label>
-        <input
-          type="text"
-          id="assetname"
-          placeholder="Enter Asset Name"
-          value={assetName}
-          onChange={(e) => setAssetName(e.target.value)}
-        />
-        <label htmlFor="description">Description*</label>
-        <textarea
-          name="description"
-          id="description"
-          value={assetDescription}
-          onChange={(e) => setAssetDescription(e.target.value)}
-        ></textarea>
-        <div className="status">{status}</div>
-        <div className="whitebutton">
-          {isUploading ? (
-            <button>Uploading...</button>
-          ) : (
-            <button onClick={submitHandler}>Submit</button>
-          )}
-        </div>
-        <div className="instructiontext">
-          Note: As per instructions issued by Government of India from time to
-          time, it is advised not to upload your government issued
-          identification such as Aadhaar card, PAN card, etc. on BitMemoir.
-          Beyond Imagination Technologies Private Limited and its associated
-          personnnel will not be liable or responsible for misuse of such
-          critical personal information at any point in time.
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="individualpage">
+			<div className="individualformcontainer">
+				<h1>{t("Individuals.create")}</h1>
+				{Math.round((user.userData?.storage_used / 1024) * 100) /
+					100}{" "}
+				{t("Individuals.gbused")}{" "}
+				{Math.round((user.userData?.storage_limit / 1024) * 100) / 100}{" "}
+				{t("Individuals.gb")}
+				<label htmlFor="fileselectorinput">
+					{t("Individuals.uploadImage")}
+				</label>
+				<input
+					type="file"
+					id="fileselectorinput"
+					style={{ display: "none" }}
+					onChange={(e) => {
+						saveImage(e.target.files[0]);
+					}}
+				/>
+				<DND
+					uploadedImageURL={uploadedImageURL}
+					saveImage={saveImage}
+				/>
+				<label htmlFor="assetname">
+					{t("Individuals.assetNameLabel")}
+				</label>
+				<input
+					type="text"
+					id="assetname"
+					placeholder={t("Individuals.assetNamePlaceholder")}
+					value={assetName}
+					onChange={(e) => setAssetName(e.target.value)}
+				/>
+				<label htmlFor="description">
+					{t("Individuals.descriptionLabel")}
+				</label>
+				<textarea
+					name="description"
+					id="description"
+					value={assetDescription}
+					onChange={(e) =>
+						setAssetDescription(e.target.value)
+					}></textarea>
+				<div className="status">{status}</div>
+				<div className="whitebutton">
+					{isUploading ? (
+						<button>{t("Individuals.uploading")}</button>
+					) : (
+						<button onClick={submitHandler}>
+							{t("Individuals.submitBtn")}
+						</button>
+					)}
+				</div>
+				<div className="instructiontext">
+					{t("Individuals.instructions")}
+				</div>
+			</div>
+		</div>
+	);
 };
 export default Individual;

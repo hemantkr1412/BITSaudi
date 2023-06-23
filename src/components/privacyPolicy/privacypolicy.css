@@ -1,29 +1,30 @@
 .privacycontainer {
-  background-color: var(--primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	background-color: var(--primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .privacypolicy {
-  padding: 20px;
-  color: var(--secondary);
-  max-width: 1080px;
-  text-align: justify;
-  text-justify: inter-word;
+	padding: 20px;
+	color: white !important;
+	max-width: 1080px;
+	text-align: justify;
+	text-justify: inter-word;
 }
 
-.privacypolicy a {
-  color: var(--secondary);
+.privacypolicy a,
+span {
+	color: white !important;
 }
 
 .privacytable td {
-  border: 1px solid var(--secondary);
-  margin: 0px;
-  padding: 5px;
+	border: 1px solid var(--secondary);
+	margin: 0px;
+	padding: 5px;
 }
 
 .privacytable tr {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
 }
