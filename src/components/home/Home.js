@@ -177,7 +177,8 @@ const Home = () => {
 							{t("Home.heading2")}
 						</div>
 						<div className="secondheading">
-							{t("Home.subheading")}
+							{t("Home.subheading1")}. {t("Home.subheading2")}.{" "}
+							{t("Home.subheading3")}. {t("Home.subheading4")}.
 						</div>
 						<div style={{ display: "flex", gap: "10px" }}>
 							<button
@@ -216,7 +217,8 @@ const Home = () => {
 							{t("Home.heading2")}
 						</div>
 						<div className="secondheading">
-							{t("Home.subheading")}
+							{t("Home.subheading1")}. {t("Home.subheading2")}.{" "}
+							{t("Home.subheading3")}. {t("Home.subheading4")}.
 						</div>
 						<div style={{ display: "flex", gap: "10px" }}>
 							<button
