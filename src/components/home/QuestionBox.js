@@ -36,7 +36,7 @@ export default function QuestionBox(props) {
 				display: "flex",
 				flexDirection: "column",
 				justifyContent: "center",
-				alignItems: "center",
+				alignItems: "stretch",
 				// width: "70%",
 			}}>
 			{variableOptions2.map((question, index) => (
