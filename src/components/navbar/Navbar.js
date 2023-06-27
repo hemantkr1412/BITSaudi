@@ -286,14 +286,14 @@ const Navbar = () => {
 								handleChange("ar");
 							}}
 							value={"ar"}>
-							{t("Navbar.Arabic")}
+							العربية
 						</a>
 						<a
 							onClick={() => {
 								handleChange("en");
 							}}
 							value={"en"}>
-							{t("Navbar.English")}
+							English
 						</a>
 					</div>
 				</div>
