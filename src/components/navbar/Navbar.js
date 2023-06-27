@@ -81,7 +81,7 @@ const Navbar = () => {
 				<div
 					className="menuitem"
 					onClick={() => {
-						navigate("/nftlayalty");
+						navigate("/nftloyalty");
 						setIsMenu(false);
 					}}>
 					{t("Navbar.LoyaldNFT")}
@@ -206,7 +206,7 @@ const Navbar = () => {
 							</a>
 							<a
 								onClick={() => {
-									navigate("/nftlayalty");
+									navigate("/nftloyalty");
 								}}>
 								{" "}
 								{t("Navbar.LoyaldNFT")}
