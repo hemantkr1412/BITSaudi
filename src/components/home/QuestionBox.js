@@ -29,7 +29,6 @@ export default function QuestionBox(props) {
 	const variableOptions2 = t("Home.FAQ.questions", {
 		returnObjects: true,
 	});
-	console.log("variableOptions2", variableOptions2);
 	return (
 		<div
 			style={{
