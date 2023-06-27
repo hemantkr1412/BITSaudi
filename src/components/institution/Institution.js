@@ -64,7 +64,7 @@ export const Institution = () => {
 
 	return (
 		<div className="institutepage">
-			<h1>{t("Institutions.LandingPage.navbar.Heading")}</h1>
+			<h1>{t("Institutions.LandingPage.Navbar.Heading")}</h1>
 			<div className="instituteLandingForm">
 				<label htmlFor="template-selector">
 					{t("Institutions.education.selectTemplate")}

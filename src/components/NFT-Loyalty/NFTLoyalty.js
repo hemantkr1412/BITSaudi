@@ -27,11 +27,11 @@ export const NFTLoyalty = () => {
 		<div className="dashboardpage">
 			<div className="dashboardcontainer">
 				<NFTNavbar />
-				<h3>{t("loyalty.nftloyalty.heading")}</h3>
+				<h3>{t("loyalty.nftLoyalty.heading")}</h3>
 				<ol>
-					<li>{t("loyalty.nftloyalty.issueClick")}</li>
-					<li>{t("loyalty.nftloyalty.viewClick")}</li>
-					<li>{t("loyalty.nftloyalty.updateClick")}</li>
+					<li>{t("loyalty.nftLoyalty.issueClick")}</li>
+					<li>{t("loyalty.nftLoyalty.viewClick")}</li>
+					<li>{t("loyalty.nftLoyalty.updateClick")}</li>
 				</ol>
 			</div>
 		</div>
@@ -48,15 +48,15 @@ const NFTNavbar = () => {
 				<div
 					className="navbutton"
 					onClick={() => navigate("/issuenft")}>
-					{t("loyalty.nftloyalty.issue")}
+					{t("loyalty.nftLoyalty.issue")}
 				</div>
 				<div className="navbutton" onClick={() => navigate("/viewnft")}>
-					{t("loyalty.nftloyalty.view")}
+					{t("loyalty.nftLoyalty.view")}
 				</div>
 				<div
 					className="navbutton"
 					onClick={() => navigate("/updatenft")}>
-					{t("loyalty.nftloyalty.update")}
+					{t("loyalty.nftLoyalty.update")}
 				</div>
 			</div>
 		</div>
