@@ -365,7 +365,9 @@
 			"createNewTemplate": "Create New Template",
 			"selectTemplate": "Select Template",
 			"selectTemplatePlaceholder": "Select a ready made template from the templates section",
-			"or": "OR"
+			"or": "OR",
+			"degreeCertificates": "Degree Certificates",
+			"diplomaCertificates": "Diploma Certificates"
 		},
 		"templateCert": {
 			"enterPreviewValue": "Enter Preview Values",
@@ -420,7 +422,9 @@
 	"view": {
 		"view": {
 			"heading": "No NFTs found.",
-			"mydigitalCollection": "My Digital Collection"
+			"mydigitalCollection": "My Digital Collection",
+			"membership": "Membership :",
+			"membershipExpiryDate": "Membership Expiry Date :"
 		},
 		"create": "Create NFTs",
 		"script": {
