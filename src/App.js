@@ -148,7 +148,7 @@ function App() {
 								</Protected>
 							}
 						/>
-						<Route path="/nftlayalty" element={<NFTLoyalty />} />
+						<Route path="/nftloyalty" element={<NFTLoyalty />} />
 						<Route path="/issuenft" element={<IssueNFT />} />
 						<Route path="/viewnft" element={<Viewnft />} />
 						<Route path="/updatenft" element={<Updatenft />} />
