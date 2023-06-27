@@ -5,6 +5,16 @@
 		"linkedin": "ينكدين",
 		"instagram": "انستغرام"
 	},
+	"sectors": {
+		"heading": "القطاعات",
+		"education": "تعليم",
+		"eventManagement": "أدارة الحدث",
+		"healthcare": "الرعاىة الصحية",
+		"legal": "قانوني",
+		"realEstate": "العقارات",
+		"sports": "رياضات",
+		"entertainment": "ترفيه"
+	},
 	"Navbar": {
 		"Home": "بيت",
 		"Create": "يخلق",

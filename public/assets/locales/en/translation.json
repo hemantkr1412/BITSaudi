@@ -5,6 +5,16 @@
 		"linkedin": "Linkedin",
 		"instagram": "Instagram"
 	},
+	"sectors": {
+		"heading": "Sectors",
+		"education": "Education",
+		"eventManagement": "Event Management",
+		"healthcare": "Healthcare",
+		"legal": "Legal",
+		"realEstate": "Real Estate",
+		"sports": "Sports",
+		"entertainment": "Entertainment"
+	},
 	"Navbar": {
 		"Home": "Home",
 		"Create": "Create",
