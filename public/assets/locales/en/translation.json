@@ -500,7 +500,10 @@
 		"IssuedBy": "Issued by:",
 		"Recipient": "Recipient :",
 		"Verifying": "Verifying...",
-		"Could_not_Verify": "Could not Verify."
+		"Could_not_Verify": "Could not Verify.",
+		"verified": "Verified",
+		"unverified": "Unverified",
+		"pending": "Verification Pending"
 	},
 	"Bitwallet": {
 		"heading1": "A crypto wallet &",

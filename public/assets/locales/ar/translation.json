@@ -499,7 +499,10 @@
 		"IssuedBy": "أصدرت من قبل:",
 		"Recipient": "متلقي :",
 		"Verifying": "جاري التحقق ...",
-		"Could_not_Verify": "تعذر التحقق."
+		"Could_not_Verify": "تعذر التحقق.",
+		"verified": "تم التحقق",
+		"unverified": "لم يتم التحقق منه",
+		"pending": "التحقق معلق"
 	},
 	"Bitwallet": {
 		"heading1": "محفظة تشفير",

@@ -37,13 +37,14 @@ const PrimaryDetails = () => {
 		[t("Dashboard.contentDashboard.Website")]: userData.website,
 		[t("Dashboard.contentDashboard.account")]: userData.account,
 	};
+	console.log(t("VerifyDetails.verified"));
 	const details2 = {
 		[t("Dashboard.contentDashboard.Status")]:
 			userData.status === "Approved"
-				? "Verified"
+				? [t("VerifyDetails.verified")]
 				: userData.status === "in_progress"
-				? "Verification Pending"
-				: "Unverified",
+				? [t("VerifyDetails.pending")]
+				: [t("VerifyDetails.unverified")],
 		[t("Dashboard.contentDashboard.regId")]: userData.regId,
 		[t("Dashboard.contentDashboard.IdProof")]: (
 			<IconButton
