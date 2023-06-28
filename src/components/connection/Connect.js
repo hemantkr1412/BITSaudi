@@ -13,12 +13,12 @@ const Connect = () => {
 		<div className="nowalletpage">
 			<img src={wallet} alt="Wallet" />
 			<h2>{t("connection.connection.heading")}</h2>
-			{t("connection.connection.connect-btn")}
+			{t("connection.connection.subheading")}
 			<button
 				onClick={() => {
 					user.login();
 				}}>
-				{t("connection.connection.subheading")}
+				{t("connection.connection.connect-btn")}
 			</button>
 		</div>
 	);
