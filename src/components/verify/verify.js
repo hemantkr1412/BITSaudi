@@ -42,7 +42,7 @@ const Verify = () => {
 				<input
 					type="number"
 					id="token-id-for-cert-verification"
-					placeholder="Enter token id"
+					placeholder={t("Verify.tokenIdPlaceholder")}
 					value={tokenId}
 					onChange={(e) => setTokenId(e.target.value)}
 				/>

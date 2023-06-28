@@ -488,6 +488,7 @@
 		"Contract_Address": "عنوان العقد:",
 		"Verify": "يؤكد",
 		"tokenId": "معرف الرمز",
+		"tokenIdPlaceholder": "أدخل معرف الرمز",
 		"contractAddressPlaceholder": "أدخل العنوان. "
 	},
 	"VerifyDetails": {

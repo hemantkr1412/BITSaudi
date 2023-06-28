@@ -489,6 +489,7 @@
 		"Contract_Address": "Contract Address:",
 		"Verify": "Verify",
 		"tokenId": "Token Id",
+		"tokenIdPlaceholder": "Enter token Id",
 		"contractAddressPlaceholder": "Enter address. e.g. 0xbff6CbaE23f790826f4209438752bd269e63e8c5"
 	},
 	"VerifyDetails": {
