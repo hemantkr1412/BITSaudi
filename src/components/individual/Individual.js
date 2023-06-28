@@ -76,16 +76,20 @@ export const Individual = () => {
 				<div className="status">{status}</div>
 				<div className="whitebutton">
 					{isUploading ? (
-						<button>{t("Individuals.uploading")}</button>
+						<button style={{ minWidth: "10rem" }}>
+							{t("Individuals.uploading")}
+						</button>
 					) : (
-						<button onClick={submitHandler}>
+						<button
+							onClick={submitHandler}
+							style={{ minWidth: "10em" }}>
 							{t("Individuals.submitBtn")}
 						</button>
 					)}
 				</div>
-				<div className="instructiontext">
+				{/* <div className="instructiontext">
 					{t("Individuals.instructions")}
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
