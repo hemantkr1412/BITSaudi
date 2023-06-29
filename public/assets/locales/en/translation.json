@@ -43,7 +43,7 @@
 		"Tokenomics": "Tokenomics",
 		"OurPartners": "Our Partners",
 		"blog": "Blog",
-		"copyright": "Copyright © 2023 Aba’ad Alkhayalal All right reserved."
+		"copyright": "Copyright © 2023 Aba’ad Alkhayal All right reserved."
 	},
 	"Home": {
 		"heading": "BitMemoir",
@@ -56,7 +56,7 @@
 		"button2": "Learn More",
 		"aboutus": {
 			"about": "What is BitMemoir?",
-			"description": "BitMemoir is a web3 based application that enables individuals and organisations to provide authorised clients with digital certifications. Individual users can convert personal identifiers,property documents, and other sensitive materials into digital certificates, or NFTs, and store them in their own wallets. By utilising blockchain technology, BitMemoir enables users to own their personal documents in perpetuity."
+			"description": "BitMemoir is a web3 based application that enables individuals and organizations to provide authorized clients with digital certifications. Individual users can convert personal identifiers, property documents, and other sensitive materials into digital certificates, or NFTs, and store them in their wallets. By utilizing blockchain technology, BitMemoir enables users to own their personal documents in perpetuity."
 		},
 		"productsuite": {
 			"heading": "PRODUCT SUITE",
@@ -75,11 +75,11 @@
 				},
 				{
 					"title": "Non Custodial wallet",
-					"description": "Owing to the increasing need of a NFT-friendly decentralised wallet, we present, BitWallet, which is both NFT and crypto friendly and with a super-simple UI/UX, will enhance the overall web3 experience for users."
+					"description": "Owing to the increasing need of an NFT-friendly decentralized wallet, we present, BitWallet, which is both NFT and crypto-friendly and with a super-simple UI/UX, will enhance the overall web3 experience for users."
 				},
 				{
 					"title": "Digital Credentials",
-					"description": "A secure and verifiable way to represent and authenticate individuals qualifications, skills, and achievements.Offering digital credentials will offer convenience, efficiency, and trust, revolutionizing the way credentials are issued, shared, and verified."
+					"description": "A secure and verifiable way to represent and authenticate an individual's qualifications, skills, and achievements. Offering digital credentials will offer convenience, efficiency, and trust, revolutionizing the way credentials are issued, shared, and verified."
 				},
 				{
 					"title": "Authentication and Verification",
@@ -91,7 +91,7 @@
 				},
 				{
 					"title": "Skills Passport",
-					"description": "An initiative towards creating a digital repository of verified documents and credentials for students,mapping their interests and skills, allowing them to create profiles that highlight their unique skill sets and experiences."
+					"description": "An initiative towards creating a digital repository of verified documents and credentials for students, mapping their interests and skills, allowing them to create profiles that highlight their unique skill sets and experiences."
 				},
 				{
 					"title": "Medical Passport",
@@ -122,7 +122,7 @@
 				},
 				"field4": {
 					"field": "Events",
-					"detail": "Proof of Attendence and Memorabilia"
+					"detail": "Proof of Attendance and Memorabilia"
 				},
 				"field5": {
 					"field": "Hospitality",
@@ -175,11 +175,11 @@
 				},
 				{
 					"question": "How does BitMemoir work?",
-					"answer": "BitMemoir uses blockchain technology to create Non-Fungible Tokens (NFTs) for each certificate issued. These NFTs have a QR code embedded on them, which contain unique information (meta-data) about the certificate, including the issuer, recipient, and timestamp. The certificates can be securely stored in personal digital wallets and easily downloaded and shared with others for verification purposes."
+					"answer": "BitMemoir uses blockchain technology to create Non-Fungible Tokens (NFTs) for each certificate issued. These NFTs have a QR code embedded on them, which contains unique information (meta-data) about the certificate, including the issuer, recipient, and timestamp. The certificates can be securely stored in personal digital wallets and easily downloaded and shared with others for verification purposes."
 				},
 				{
 					"question": "How can I issue certificates using BitMemoir?",
-					"answer": "To issue certificates using BitMemoir, you need to first connect the platform with a decentralised wallet and complete the KYC process in order to procure a white-labelled account.On obtaining a white-labelled account, you may upload the certificate template, enter the relevant details, and generate the NFT."
+					"answer": "To issue certificates using BitMemoir, you need to first connect the platform with a decentralized wallet and complete the KYC process in order to procure a white-labeled account. On obtaining a white-labeled account, you may upload the certificate template, enter the relevant details, and generate the NFT."
 				},
 				{
 					"question": "What are the benefits of BitMemoir?",
@@ -198,11 +198,11 @@
 				},
 				{
 					"question": "Can BitMemoir be integrated with existing systems?",
-					"answer": "Yes, BitMemoir provides integration options to seamlessly connect with existing platforms used by your organisation. This allows for automatic data synchronization and streamlined certificate issuance. For such integration requirements, write to us at support@beimagine.tech."
+					"answer": "Yes, BitMemoir provides integration options to seamlessly connect with existing platforms used by your organization. This allows for automatic data synchronization and streamlined certificate issuance. For such integration requirements, write to us at support@beimagine.tech."
 				},
 				{
 					"question": "Is BitMemoir compatible with different types of documents?",
-					"answer": "Yes, BitMemoir can be used to issue and verify a wide range of documents, including academic degrees, diplomas, professional certifications, office memo, event certificates, event tickets etc. However, the document must be in the JPEG format."
+					"answer": "Yes, BitMemoir can be used to issue and verify a wide range of documents, including academic degrees, diplomas, professional certifications, office memos, event certificates, event tickets, etc. However, the document must be in the JPEG format."
 				},
 				{
 					"question": "Is BitMemoir secure?",
@@ -223,7 +223,7 @@
 			"in_progress": {
 				"heading": "Your KYC approval is pending",
 				"heading1": "For more support:",
-				"heading2": "email us at hello@beimagine.tech"
+				"heading2": "Email us at hello@beimagine.tech"
 			},
 			"approved": {
 				"heading": "KYC Approved"
@@ -232,14 +232,14 @@
 				"heading": "Your KYC was Rejected.",
 				"heading1": "Reason:",
 				"heading2": "For more support:",
-				"heading3": "email us at hello@beimagine.tech",
+				"heading3": "Email us at hello@beimagine.tech",
 				"restartkyc": "Restart KYC"
 			},
 			"revoked": {
 				"heading": "Your KYC approval has been revoked.",
 				"heading1": "Reason:",
 				"heading2": "For more support:",
-				"heading3": "email us at hello@beimagine.tech",
+				"heading3": "Email us at hello@beimagine.tech",
 				"restartkyc": "Restart KYC"
 			}
 		},
@@ -291,7 +291,7 @@
 		"descriptionLabel": "Description",
 		"uploading": "Uploading...",
 		"submitBtn": "Submit",
-		"instructions": "Note: As per instructions issued by Government of India from time to time, it is advised not to upload your government issued identification such as Aadhaar card, PAN card, etc. on BitMemoir. Beyond Imagination Technologies Private Limited and its associated personnnel will not be liable or responsible for misuse of such critical personal information at any point in time.",
+		"instructions": "Note: It is advised not to upload your government-issued identification on BitMemoir. Aba’ad Alkhayal and its associated personnel will not be liable or responsible for misuse of such critical personal information at any point in time.",
 		"requirements": {
 			"assetName": "Asset name is required",
 			"assetDescription": "Asset description is required",
@@ -364,7 +364,7 @@
 			"more": "More",
 			"createNewTemplate": "Create New Template",
 			"selectTemplate": "Select Template",
-			"selectTemplatePlaceholder": "Select a ready made template from the templates section",
+			"selectTemplatePlaceholder": "Select a ready-made template from the templates section",
 			"or": "OR",
 			"degreeCertificates": "Degree Certificates",
 			"diplomaCertificates": "Diploma Certificates"
@@ -377,7 +377,7 @@
 			"save": "Save",
 			"preview": "Preview",
 			"issue": "Issue",
-			"readymadetemplate": "Ready made templates"
+			"readymadetemplate": "Ready-made templates"
 		},
 		"certIssue": {
 			"sno": "S.No.",
@@ -393,7 +393,7 @@
 			"issueAll": "Issue All",
 			"issueAllCertificates": "Issue All Certificates",
 			"closeSpreadsheet": "Close Spreadsheet",
-			"alreadyExcelsheet": "Already have an excel sheet prepared?",
+			"alreadyExcelsheet": "Already have an Excel sheet prepared?",
 			"copypagesheet": "Copy/Paste from Excel/Spreadsheet",
 			"NoOfCert": "Number of Certificates",
 			"enterValues": "Enter individual values next",
@@ -509,12 +509,12 @@
 		"heading1": "A crypto wallet &",
 		"heading2": "gateway to",
 		"heading3": "blockchain World",
-		"subheading": "Enhance your user experience with BitWallet, the key to blockchain world",
+		"subheading": "Enhance your user experience with BitWallet, the key to the blockchain world",
 		"download": "Download Now",
 		"heading4": "Use as a browser extension or mobile app",
-		"subheading4": "Available as a browser extension and as a mobile app, BitWallet equips you with a key vault, secure login, simple NFT and Crypto storage and transfer.",
+		"subheading4": "Available as a browser extension and as a mobile app, BitWallet equips you with a key vault, secure login, simple NFT, and Crypto storage and transfer.",
 		"heading5": "Security for your digital assets",
-		"subheading5": "BitWallet generates passwords and keys on your device, so only you have access to your accounts and data. Assistance navigating through various decentralised websites and blockchain apps.",
+		"subheading5": "BitWallet generates passwords and keys on your device, so only you have access to your accounts and data. Assistance navigating through various decentralized websites and blockchain apps.",
 		"heading6": "Zero downtime",
 		"subheading6": "Protection of your keys through encryption",
 		"bitwalletDwnld": "BitWallet Download",
@@ -582,7 +582,7 @@
 	"Aboutus": {
 		"main": "About us",
 		"head": "Our Vision is to solve the current, growing trust crisis and increase the credibility of the web.",
-		"content": "Beyond Imagination Technologies (BIT) was founded as India's first startup with the idea of ​​nurturing Blockchain/Web3 technology and creating cost-effective, safe and secure solutions that fit the needs of the market. BIT seeks to address the main problems of the market in all possible aspects and in multiple sectors, extending its reach to all corners of the world.",
+		"content": "Beyond Imagination Technologies (BIT) was founded as India's first startup with the idea of ​​nurturing Blockchain/Web3 technology and creating cost-effective, safe, and secure solutions that fit the needs of the market. BIT seeks to address the main problems of the market in all possible aspects and in multiple sectors, extending its reach to all corners of the world.",
 		"button": "View More"
 	},
 	"dNFT": {
@@ -644,7 +644,7 @@
 		"email": "Email",
 		"enteremail": "Enter Email...",
 		"organization": "Organization",
-		"enterorganization": "Enter organization's name",
+		"enterorganization": "Enter the organization's name",
 		"contact": "Contact Number",
 		"enterContact": "Enter phone number...",
 		"country": "Country",
@@ -661,7 +661,7 @@
 	"learnmore": {
 		"destination": {
 			"heading": "How to use BitMemoir",
-			"subheading": "For hotels, resorts, events and travel destinations.",
+			"subheading": "For hotels, resorts, events, and travel destinations.",
 			"infotext": [
 				{
 					"text": "The destination shall contact us for issuing souvenirs."
@@ -688,7 +688,7 @@
 		},
 		"individual": {
 			"subheading": "For Individuals",
-			"infotext": "Individual users can simply go to the BitMemoir web application, sign-in with a blockchain wallet and start uploading their files. The uploaded files can be viewed or downloaded from the BitMemoir web application."
+			"infotext": "Individual users can simply go to the BitMemoir web application, sign-in with a blockchain wallet, and start uploading their files. The uploaded files can be viewed or downloaded from the BitMemoir web application."
 		},
 		"institute": {
 			"subheading": "For educational institutions including schools, colleges, and universities.",
@@ -720,7 +720,7 @@
 		"company": "Beyond Imagination Tech LLC",
 		"building": "M03 Laffa restaurant building,",
 		"address": "Sheikh Khalifa Bin Zayed St - opp. Burjuman Mall,",
-		"country": "Dubai,United Arab Emirates",
+		"country": "Dubai, United Arab Emirates",
 		"supportEmail": "support@beimagine.tech",
 		"marketingEmail": "marketing@beimagine.tech",
 		"checkSocial": "Check out our social:"
@@ -752,11 +752,11 @@
 		"alert": {
 			"walletAddress": "Please enter wallet address",
 			"selectImage": "Please select image",
-			"expiryMembership": "Please enter expiry date of membership",
+			"expiryMembership": "Please enter the expiry date of membership",
 			"reward": "Please enter reward",
 			"expiryReward": "Please enter expiry date of reward",
 			"noNftQuota": "You have no NFT quota left. Please subscribe to get more NFT quota.",
-			"waiting": "Waiting for transaction to be mined...",
+			"waiting": "Waiting for the transaction to be mined...",
 			"success": "NFT issued successfully",
 			"failure": "NFT not issued",
 			"claimedSuccess": "Reward claimed successfully",
@@ -840,7 +840,7 @@
 		"cookiesIntro": "We may use cookies, local storage or similar technologies to analyze trends, administer the Sites, track users' movements around the Sites, and to gather demographic information about our user base as a whole. Users can control the use of cookies and local storage at the individual browser level. For more information, please see our",
 		"cookiesPolicy": "Cookies Policy",
 		"cookiesEnd": ".",
-		"googleAnalyticsIntro": "We also may use Google Analytics to help us offer you an optimized user experience. You can find more information about Google Analytics' use of your personal data here:",
+		"googleAnalyticsIntro": "We also may use Google Analytics to help us offer you an optimized user experience. You can find more information about Google Analytics use of your personal data here:",
 		"googleAnalyticsLink": "https://www.google.com/analytics/terms/us.html",
 		"googleAnalyticsNote": ". Please note that Metamask does not use Google Analytics in its wallet.",
 		"eventTrackingToolIntro": "We use ________, an event tracking tool, in some of our Services in order to better understand how you are using the Sites. You can find more information about the tool's use of your personal data ",
@@ -856,7 +856,7 @@
 		"deliverProductsAndServices": "To provide and deliver products and services that you may request.",
 		"processAndCompleteTransactions": "To process and complete transactions, and send you related information, including purchase confirmations and invoices",
 		"sendInformation": "To send information, including confirmations, technical notices, updates, security alerts, and support and administrative messages.",
-		"complyWithLawTitle": "To comply with law",
+		"complyWithLawTitle": "To comply with the law",
 		"complyWithLawIntro": "We use your personal information as we believe necessary or appropriate to comply with applicable laws (including anti-money laundering (AML) laws and know-your-customer (KYC) requirements), lawful requests and legal process, such as to respond to subpoenas or requests from government authorities.",
 		"communicateWithTitle": "To communicate with you",
 		"communicateWithIntro": "We use your personal information to communicate about promotions, upcoming events, and other news about products and services offered by us and our selected partners.",
@@ -886,14 +886,14 @@
 		"internationalTransferTitle": "INTERNATIONAL TRANSFER",
 		"internationalTransferIntro": "The Company has offices only in India and endeavors to provide its Services at a global level. Your personal information will never be transferred to or from India outside of your state, province, country, or other governmental jurisdiction where privacy laws may not be as protective as those in your jurisdiction.",
 		"informationSecurityTitle": "HOW INFORMATION IS SECURED",
-		"informationSecurityIntro": "We retain information we collect as long as it is necessary and relevant to fulfill the purposes outlined in this privacy policy. In addition, we retain personal information to comply with applicable law where required, prevent fraud, resolve disputes, troubleshoot problems, assist with any investigation, enforce our Terms of Use, and other actions permitted by law. To determine the appropriate retention period for personal information, we consider the amount, nature, and sensitivity of the personal information, the potential risk of harm from unauthorized use or disclosure of your personal information, the purposes for which we process your personal information and whether we can achieve those purposes through other means, and the applicable legal requirements.",
+		"informationSecurityIntro": "We retain the information we collect as long as it is necessary and relevant to fulfill the purposes outlined in this privacy policy. In addition, we retain personal information to comply with applicable law where required, prevent fraud, resolve disputes, troubleshoot problems, assist with any investigation, enforce our Terms of Use, and other actions permitted by law. To determine the appropriate retention period for personal information, we consider the amount, nature, and sensitivity of the personal information, the potential risk of harm from unauthorized use or disclosure of your personal information, the purposes for which we process your personal information, and whether we can achieve those purposes through other means, and the applicable legal requirements.",
 		"retentionOfInformation": "In some circumstances, we may anonymize your personal information (so that it can no longer be associated with you) in which case we may use this information indefinitely without further notice to you.",
 		"securityMeasures": "We employ industry-standard security measures designed to protect the security of all information submitted through the Services. However, the security of information transmitted through the internet can never be guaranteed. We are not responsible for any interception or interruption of any communications through the internet or for changes to or losses of data. Users of the Services are responsible for maintaining the security of any password, biometrics, user ID, or other form of authentication involved in obtaining access to password-protected or secure areas of any of our digital services. In order to protect you and your data, we may suspend your use of any of the Services, without notice, pending an investigation if any breach of security is suspected.",
 		"informationChoicesAndChangesTitle": "INFORMATION CHOICES AND CHANGES",
 		"accessUpdateDeleteInfoTitle": "Accessing, Updating, Correcting, and Deleting your Information",
 		"accessUpdateDeleteInfoIntro": "You may access information that you have voluntarily provided through your account on the Services, and to review, correct, or delete it by sending a request to support@beimagine.tech. You can request to change contact choices, opt-out of our sharing with others, and update your personal information and preferences.",
 		"trackingTechnologiesTitle": "Tracking Technologies Generally",
-		"regularCookies": "Regular cookies may generally be disabled or removed by tools available as part of most commercial browsers, and in some instances blocked in the future by selecting certain settings.",
+		"regularCookies": "Regular cookies may generally be disabled or removed by tools available as part of most commercial browsers and in some instances blocked in the future by selecting certain settings.",
 		"googleAnalyticsTitle": "Google Analytics",
 		"googleAnalyticsIntro2": "You may exercise choices regarding the use of cookies from Google Analytics by going to https://tools.google.com/dlpage/gaoptout and downloading the Google Analytics Opt-out Browser Add-on.",
 		"contact_information": "CONTACT INFORMATION",
@@ -918,7 +918,7 @@
 		"communicate_optimize_platform2": "To optimize our platform",
 		"communicate_optimize_platform3": "For compliance, fraud prevention, and safety",
 		"communicate_optimize_platform_legal_basis": "These processing activities constitute our legitimate interests. We make sure we consider and balance any potential impacts on you (both positive and negative) and your rights before we process your personal information for our legitimate interests. We do not use your personal information for activities where our interests are overridden by any adverse impact on you (unless we have your consent or are otherwise required or permitted to by law).",
-		"comply_with_law": "To comply with law",
+		"comply_with_law": "To comply with the law",
 		"comply_with_law_legal_basis": "We use your personal information to comply with applicable laws and our legal obligations, including anti-money laundering (AML) laws and know-your-customer (KYC) requirements.",
 		"with_your_consent": "With your consent",
 		"with_your_consent_legal_basis": "Where our use of your personal information is based upon your consent, you have the right to withdraw it anytime in the manner indicated in the Service or by contacting us at support@beimagine.tech.",

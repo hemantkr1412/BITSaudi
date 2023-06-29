@@ -87,9 +87,9 @@ export const Individual = () => {
 						</button>
 					)}
 				</div>
-				{/* <div className="instructiontext">
+				<div className="instructiontext">
 					{t("Individuals.instructions")}
-				</div> */}
+				</div>
 			</div>
 		</div>
 	);
