@@ -411,7 +411,7 @@ const DNFTMainPage = () => {
 										marginTop: "50px",
 									}}
 									onClick={() => {
-										setStatus("Updating Batch....");
+										setStatus(t("dNFT.updatingBatch"));
 										dNFtForStudent({
 											request_type: "update",
 											account: user.userAccount,
@@ -426,7 +426,9 @@ const DNFTMainPage = () => {
 												setIsUpdate(true);
 
 												setStatus(
-													"Batch Updated Successfully"
+													t(
+														"dNFT.batchUpdatedSuccessfully"
+													)
 												);
 												alert(
 													t(
@@ -643,7 +645,7 @@ const DNFTMainPage = () => {
 											marginTop: "50px",
 										}}
 										onClick={() => {
-											setStatus("Updating Batch....");
+											setStatus(t("dNFT.updatingBatch"));
 											setIsLoading(true);
 											dNFtForStudent({
 												request_type: "update",
@@ -659,7 +661,9 @@ const DNFTMainPage = () => {
 													);
 													console.log(res);
 													setStatus(
-														"Batch Updated Successfully"
+														t(
+															"dNFT.batchUpdatedSuccessfully"
+														)
 													);
 													setIsLoading(false);
 													setIsBatchList(false);
@@ -681,10 +685,14 @@ const DNFTMainPage = () => {
 													console.log(err);
 													setIsLoading(false);
 													setStatus(
-														"Errored. please try again."
+														t(
+															"dNFT.Erroredpleasetryagain"
+														)
 													);
 													alert(
-														"Something went wrong. Please try again."
+														t(
+															"Individuals.requirements.uploadFailure"
+														)
 													);
 												});
 										}}>

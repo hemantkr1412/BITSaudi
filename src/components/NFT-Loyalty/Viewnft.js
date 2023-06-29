@@ -56,7 +56,7 @@ export const Viewnft = () => {
 				setStatus("");
 				setCard(true);
 			} else {
-				setStatus("view.view.heading");
+				setStatus(t("view.view.heading"));
 			}
 		} catch (error) {
 			console.log(error);

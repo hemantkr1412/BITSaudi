@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 const Approval = () => {
 	const { orderId, otp } = useParams();
 	const [isLoading, setIsLoading] = useState(true);
-	const [status, setStatus] = useState("Approving...");
+	const [status, setStatus] = useState(t("Institutions.approval.approving"));
 	const [approvers, setApprovers] = useState([]);
 	const { t } = useTranslation();
 
@@ -17,16 +17,16 @@ const Approval = () => {
 			.then((res) => {
 				console.log(res);
 				if (res === "Fulfilled") {
-					setStatus("Approved. Certificates issued successfully.");
+					setStatus(t("Institutions.approval.approvedCertsIssued"));
 					setIsLoading(false);
 				} else {
-					setStatus("Approved.");
+					setStatus(t("Institutions.approval.approved"));
 					setIsLoading(false);
 					setApprovers(res);
 				}
 			})
 			.catch((err) => {
-				setStatus("Something went wrong. Please try again.");
+				setStatus(t("Individuals.requirements.uploadFailure"));
 				setIsLoading(false);
 			});
 	}, []);
@@ -51,7 +51,7 @@ const Approval = () => {
 				<br />
 				<br />
 
-				{status === "Approved." && (
+				{status === t("Institutions.approval.approved") && (
 					<div
 						style={{
 							marginTop: "20px",

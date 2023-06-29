@@ -432,7 +432,7 @@ const Individualdnft = () => {
 										marginTop: "50px",
 									}}
 									onClick={() => {
-										setStatus("Updating Batch....");
+										setStatus(t("dNFT.updatingBatch"));
 										dNFtForStudent({
 											request_type: "update",
 											account: user.userAccount,
@@ -445,10 +445,14 @@ const Individualdnft = () => {
 												);
 												console.log(res);
 												setStatus(
-													"Batch Updated Successfully"
+													t(
+														"dNFT.batchUpdatedSuccessfully"
+													)
 												);
 												alert(
-													"Batch Updated Successfully"
+													t(
+														"dNFT.batchUpdatedSuccessfully"
+													)
 												);
 											})
 											.catch((err) => {
@@ -560,7 +564,9 @@ const Individualdnft = () => {
 											marginTop: "20px",
 										}}
 										onClick={() => {
-											setStatus("Searching NFT....");
+											setStatus(
+												t("Individuals.searchingNFT")
+											);
 											// let token_id = document.getElementById("inputtokenid").value();
 											console.log(token_id);
 											individuallst.forEach((element) => {
@@ -571,7 +577,11 @@ const Individualdnft = () => {
 												}
 												selectednft.wallet_address ===
 													"" &&
-													setStatus("NFT Not Found");
+													setStatus(
+														t(
+															"Individuals.nftNotFound"
+														)
+													);
 											});
 										}}>
 										{t("dNFT.search")}
@@ -721,12 +731,16 @@ const Individualdnft = () => {
 													);
 													console.log(res);
 													setStatus(
-														"NFT Updated Successfully"
+														t(
+															"dNFT.nftUpdatedSuccessfully"
+														)
 													);
 													setIsLoading(false);
 													setIsUpdate(true);
 													alert(
-														"NFT Updated Successfully"
+														t(
+															"dNFT.nftUpdatedSuccessfully"
+														)
 													);
 													setSelectednft({
 														wallet_address: "",
@@ -744,10 +758,14 @@ const Individualdnft = () => {
 													console.log(err);
 													setIsLoading(false);
 													setStatus(
-														"Errored. please try again."
+														t(
+															"dNFT.Erroredpleasetryagain"
+														)
 													);
 													alert(
-														"Something went wrong. Please try again."
+														t(
+															"Individuals.requirements.uploadFailure"
+														)
 													);
 												});
 										}}>
@@ -799,11 +817,11 @@ const StudentsView = (students) => {
 					width: "100%",
 					borderBottom: "1px solid white",
 				}}>
-				<div>S.No.</div>
-				<div>Address</div>
-				<div>Status</div>
-				<div>Token Id</div>
-				<div>NFT</div>
+				<div>{t("dNFT.sno")}</div>
+				<div>{t("dNFT.address")}</div>
+				<div>{t("dNFT.status")}</div>
+				<div>{t("dNFT.TokenId")}</div>
+				<div>{t("dNFT.nft")}</div>
 			</div>
 
 			{students?.students?.map((student, index) => (

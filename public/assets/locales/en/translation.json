@@ -304,7 +304,9 @@
 			"uploadFailure": "Something went wrong. Please try again."
 		},
 		"gbused": "GB used out of",
-		"gb": "GB"
+		"gb": "GB",
+		"searchingNft": "Searching NFT....",
+		"nftNotFound": "NFT Not Found"
 	},
 	"Institutions": {
 		"LandingPage": {
@@ -405,7 +407,8 @@
 			"downloadsCSV": "Download CSV template",
 			"nextbtn": "Next",
 			"backbtn": "Back",
-			"headingCloseWindow": "You can close the window."
+			"headingCloseWindow": "You can close the window.",
+			"issuingCertificates": "Issuing Certificates..."
 		},
 		"badgeIssue": {
 			"heading": "Issue Badges",
@@ -416,7 +419,10 @@
 			"heading": "Certificate is pending approval from the following approvers:",
 			"name": "Name : ",
 			"designation": "Designation : ",
-			"email": "Email : "
+			"email": "Email : ",
+			"approving": "Approving...",
+			"approvedCertsIssued": "Approved. Certificates issued successfully",
+			"approved": "Approved."
 		}
 	},
 	"view": {
@@ -586,6 +592,7 @@
 		"button": "View More"
 	},
 	"dNFT": {
+		"sno": "S.No.",
 		"nft": "NFT",
 		"heading": "Dynamic NFT Certificates",
 		"Batch": "Batch",
@@ -627,7 +634,10 @@
 			"upgradePlan": "Please upgrade your plan.",
 			"exceeded": "You have exceeded your quota. Please upgrade your plan.",
 			"nftIssued": "Student NFT issued successfully."
-		}
+		},
+		"batchUpdatedSuccessfully": "Batch Update Successfully",
+		"updatingBatch": "Updating Batch....",
+		"certificatesIssuedSuccessfully": "Certificates Issued Successfully"
 	},
 	"tryforfree": {
 		"requiredFields": "* marked fields are required.",
@@ -649,7 +659,9 @@
 		"enterContact": "Enter phone number...",
 		"country": "Country",
 		"entercountry": "Enter country...",
-		"enter": "Enter"
+		"enter": "Enter",
+		"submittedSuccessfully": "Submitted Successfully",
+		"maximum3": "Maximum 3 approvers are allowed."
 	},
 	"scripts": {
 		"dnd": {

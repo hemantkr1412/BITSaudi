@@ -59,7 +59,7 @@ const CertIssue = ({ setView, certData, category }) => {
 	const uploadFile = () => {
 		if (category === "non educational certificates") {
 			setIsLoading(true);
-			setStatus("Issuing certificates...");
+			setStatus(t("Institutions.certIssue.issuingCertificates"));
 			nonEssenCertissueApi({
 				template_id: certData.id,
 				file: uploadedFile,
@@ -67,9 +67,9 @@ const CertIssue = ({ setView, certData, category }) => {
 			})
 				.then((res) => {
 					if (res === "issued") {
-						setStatus("Certificates issued successfully.");
+						setStatus(t("dNFT.certificatesIssuedSuccessfully"));
 					} else if (res === "pending approval") {
-						setStatus("Certificate order sent for approval.");
+						setStatus(t("dNFT.CertificateOderSentForApproval"));
 					}
 					user.poppulateUserData();
 					console.log(res);
@@ -77,11 +77,11 @@ const CertIssue = ({ setView, certData, category }) => {
 				.catch((err) => {
 					console.log(err);
 					setIsLoading(false);
-					alert("Something went wrong. Please check the data.");
+					alert(t("Individuals.requirements.uploadFailure"));
 				});
 		} else {
 			setIsLoading(true);
-			setStatus("Issuing certificates...");
+			setStatus(t("Institutions.certIssue.issuingCertificates"));
 			issueApi({
 				template_id: certData.id,
 				file: uploadedFile,
@@ -89,9 +89,9 @@ const CertIssue = ({ setView, certData, category }) => {
 			})
 				.then((res) => {
 					if (res === "issued") {
-						setStatus("Certificates issued successfully.");
+						setStatus(t("dNFT.certificatesIssuedSuccessfully"));
 					} else if (res === "pending approval") {
-						setStatus("Certificate order sent for approval.");
+						setStatus(t("dNFT.CertificateOderSentForApproval"));
 					}
 					user.poppulateUserData();
 					console.log(res);
@@ -99,7 +99,7 @@ const CertIssue = ({ setView, certData, category }) => {
 				.catch((err) => {
 					console.log(err);
 					setIsLoading(false);
-					alert("Something went wrong. Please check the data.");
+					alert(t("Individuals.requirements.uploadFailure"));
 				});
 		}
 	};
@@ -227,7 +227,7 @@ const LoadingPage = ({ status, setView }) => {
 				gap: "20px",
 				margin: "auto",
 			}}>
-			{status === "Issuing certificates..." && (
+			{status === t("Institutions.certIssue.issuingCertificates") && (
 				<Backdrop
 					sx={{
 						color: "#fff",
@@ -238,10 +238,10 @@ const LoadingPage = ({ status, setView }) => {
 				</Backdrop>
 			)}
 			<h3>{status}</h3>
-			{status === "Issuing certificates..." && (
+			{status === t("Institutions.certIssue.issuingCertificates") && (
 				<h4>{t("Institutions.certIssue.headingCloseWindow")}</h4>
 			)}
-			{status !== "Issuing certificates..." && (
+			{status !== t("Institutions.certIssue.issuingCertificates") && (
 				<button onClick={() => setView("education")}>
 					{t("Institutions.certIssue.ok")}
 				</button>

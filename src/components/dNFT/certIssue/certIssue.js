@@ -95,7 +95,7 @@ const CertIssue = ({ category, setCategory, setIsBatchCreator }) => {
 			return;
 		}
 		setIsLoading(true);
-		setStatus("Issuing certificates...");
+		setStatus(t("Institutions.certIssue.issuingCertificates"));
 		dNFtForStudent({
 			request_type: "create_batch",
 			account: user.userAccount,
@@ -108,12 +108,12 @@ const CertIssue = ({ category, setCategory, setIsBatchCreator }) => {
 		})
 			.then((res) => {
 				if (res === "issued") {
-					setStatus("Dynamic NFT Issued Successfully");
+					setStatus(t("dNFT.dynamicIssuedSucessfully"));
 					alert(t("dNFT.dynamicIssuedSucessfully"));
 					// alert("Order has been submitted Please check in Few Minute.");
 					// window.location.reload();
 				} else if (res === "pending approval") {
-					setStatus("Certificate Order Sent For Approval");
+					setStatus(t("dNFT.CertificateOderSentForApproval"));
 					alert(t("dNFT.alert.upgradePlan"));
 					// window.location.reload();
 				}
@@ -345,7 +345,7 @@ const LoadingPage = ({
         </Backdrop>
       )} */}
 			<h3>{status}</h3>
-			{status === "Issuing certificates..." && (
+			{status === t("Institutions.certIssue.issuingCertificates") && (
 				<div>
 					<h4>
 						{t("dNFT.OderhasbeenSubmittedPleaseCheckinFewMinutes")}
@@ -369,7 +369,7 @@ const LoadingPage = ({
 					</button>
 				</div>
 			)}
-			{status !== "Issuing certificates..." && (
+			{status !== t("Institutions.certIssue.issuingCertificates") && (
 				<button
 					onClick={() => {
 						{

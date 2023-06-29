@@ -303,7 +303,9 @@
 			"uploadFailure": "هناك خطأ ما. "
 		},
 		"gbused": "تم استخدام غيغابايت من أصل",
-		"gb": "غيغابايت"
+		"gb": "غيغابايت",
+		"searchingNft": "جاري البحث في NFT ....",
+		"nftNotFound": "NFT غير موجود"
 	},
 	"Institutions": {
 		"LandingPage": {
@@ -359,7 +361,7 @@
 			"headingRecentlyUsed": "مستخدم حديثا",
 			"headingFreeTemplates": "قوالب مجانية",
 			"headingPremiumTemplates": "قوالب متميزة",
-			"createCustomTemplate": "إنشاء نموذج مخصص",
+			"createCustomTemplate": "إنشاء قالب مخصص",
 			"more": "أكثر",
 			"createNewTemplate": "إنشاء قالب جديد",
 			"selectTemplate": "حدد قالب",
@@ -404,7 +406,8 @@
 			"downloadsCSV": "تنزيل نموذج CSV",
 			"nextbtn": "التالي",
 			"backbtn": "خلف",
-			"headingCloseWindow": "يمكنك إغلاق النافذة."
+			"headingCloseWindow": "يمكنك إغلاق النافذة.",
+			"issuingCertificates": "إصدار الشهادات ..."
 		},
 		"badgeIssue": {
 			"heading": "إصدار شارات",
@@ -415,7 +418,10 @@
 			"heading": "الشهادة في انتظار الموافقة من المعتمدين التاليين:",
 			"name": "اسم : ",
 			"designation": "تعيين : ",
-			"email": "بريد إلكتروني : "
+			"email": "بريد إلكتروني : ",
+			"approving": "جارٍ الموافقة ...",
+			"approvedCertsIssued": "موافقة. ",
+			"approved": "موافقة."
 		}
 	},
 	"view": {
@@ -584,6 +590,7 @@
 		"button": "عرض المزيد"
 	},
 	"dNFT": {
+		"sno": "S. لا.",
 		"nft": "NFT",
 		"heading": "شهادات NFT الديناميكية",
 		"Batch": "حزمة",
@@ -625,7 +632,10 @@
 			"upgradePlan": "الرجاء ترقية خطتك.",
 			"exceeded": "لقد تجاوزت حصتك. ",
 			"nftIssued": "أصدر الطالب NFT بنجاح."
-		}
+		},
+		"batchUpdatedSuccessfully": "تحديث الدفعة بنجاح",
+		"updatingBatch": "جارٍ تحديث الدفعة ....",
+		"certificatesIssuedSuccessfully": "تم إصدار الشهادات بنجاح"
 	},
 	"tryforfree": {
 		"requiredFields": "* الحقول المعلمة مطلوبة.",
@@ -647,7 +657,9 @@
 		"enterContact": "أدخل رقم الهاتف...",
 		"country": "دولة",
 		"entercountry": "أدخل الدولة ...",
-		"enter": "يدخل"
+		"enter": "يدخل",
+		"submittedSuccessfully": "تم الإرسال بنجاح",
+		"maximum3": "يسمح بحد أقصى 3 موافقين."
 	},
 	"scripts": {
 		"dnd": {
@@ -830,7 +842,7 @@
 		"informationFromOthersTitle": "المعلومات التي نحصل عليها من الآخرين.",
 		"informationFromOthersIntro": "قد نحصل على معلومات عنك من مصادر خارجية أخرى ، وقد نضيف ذلك إلى المعلومات التي نحصل عليها من استخدامك للخدمات. ",
 		"ssoRegistrationTitle": "التسجيل باستخدام حساب الدخول الموحد",
-		"ssoRegistrationInfo": "عند تسجيل بعض حسابات المستخدمين (على سبيل المثال ، مع موقع BIT) ، يكون لديك أيضًا خيار استخدام حساب تسجيل دخول واحد (\"SSO\"). ",
+		"ssoRegistrationInfo": "عند تسجيل بعض حسابات المستخدمين (على سبيل المثال ، مع موقع BIT) ، لديك أيضًا خيار استخدام حساب تسجيل دخول واحد (\"SSO\"). ",
 		"googlePrivacyPolicy": "سياسة خصوصية Google",
 		"ssoRegistrationNote": "ملاحظة: يخضع التسجيل في خدمات الدخول الموحّد (SSO) واستخدامها لسياسة خصوصية Google وشروط الاستخدام الخارجة عن سيطرتنا.",
 		"infoAutomaticallyCollectedTitle": "المعلومات التي يتم جمعها تلقائيًا.",
