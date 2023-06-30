@@ -806,6 +806,7 @@ export default Individualdnft;
 
 const StudentsView = (students) => {
 	const user = useContext(UserContext);
+	const { t } = useTranslation();
 	const [isLoading, setIsLoading] = useState(false);
 	return (
 		<div>

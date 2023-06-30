@@ -22,6 +22,7 @@ const KycScript = (setForm) => {
 	const [idProofApprovers, setIdProofApprovers] = useState("");
 	const [noteSignByHigherAuth, setNoteSignByHigherAuth] = useState("");
 	const [approversDocument, setApproversDocument] = useState([]);
+	const { t } = useTranslation();
 
 	const handleSubmit = () => {
 		setStatus("");
